@@ -1,6 +1,6 @@
 import sys
-from Controller.main import Form
-from PySide6.QtWidgets import QMainWindow,QPushButton,QLineEdit,QApplication
+from Controller.Form import Form
+from PySide6.QtWidgets import QApplication
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

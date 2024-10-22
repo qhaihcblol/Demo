@@ -1,81 +1,74 @@
-
-from PySide6.QtWidgets import QMainWindow, QWidget
+from Controller import Battery_Level
+from PySide6.QtWidgets import QMainWindow
 from PySide6 import QtCore
-from PySide6.QtCore import QPropertyAnimation, Property
 from View.ui_form import Ui_MainWindow
+import time
+import threading
+import random
+
+
+def random_number():
+    return random.randint(0, 100)
+
 
 class Form(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Power Management")
-        self.icon_only_widget.setHidden(Trueee)
-        
         self.setUpSignal()
-        self.battery_level = 0
-        self.page_setup_methods = {
-            "Battery_Level_Page": self.Battery_Level_SetUp,
-            # "Power_Mode_Page": self.Power_Mode_SetUp,
-            # "Brightness_Page": self.Brightness_SetUp,
-            # "Display_Mode_Page": self.Display_Mode_SetUp,
-            # "Power_Saving_Page": self.Power_Saving_SetUp,
-            # "Info_Page": self.Info_SetUp
-        }
-        
+        self.icon_only_widget.setHidden(True)
+
+        # Cờ dừng luồng
+        self.stop_thread = False
+
+        # Khởi động luồng
+        self.thread1 = threading.Thread(target=self.update_battery)
+        self.thread1.start()
+
     def setUpSignal(self):
-        
-        self.Info_Btn.clicked.connect(lambda: self.Switch_To_Page("Info_Page"))
-        
-        self.Battery_Level_Btn1.clicked.connect(lambda: self.Switch_To_Page("Battery_Level_Page"))
-        self.Battery_Level_Btn2.clicked.connect(lambda: self.Switch_To_Page("Battery_Level_Page"))
+        # self.stackedWidget.currentChanged.connect(lambda: self.Page_Changed(1))
 
-        self.Power_Mode_Btn1.clicked.connect(lambda: self.Switch_To_Page("Power_Mode_Page"))
-        self.Power_Mode_Btn2.clicked.connect(lambda: self.Switch_To_Page("Power_Mode_Page"))
+        self.Info_Btn.clicked.connect(lambda: self.Switch_To_Page(0))
 
-        self.Brightness_Btn1.clicked.connect(lambda: self.Switch_To_Page("Brightness_Page"))
-        self.Brightness_Btn2.clicked.connect(lambda: self.Switch_To_Page("Brightness_Page"))
+        self.Battery_Level_Btn1.clicked.connect(lambda: self.Switch_To_Page(1))
+        self.Battery_Level_Btn2.clicked.connect(lambda: self.Switch_To_Page(1))
 
-        self.Display_Mode_Btn1.clicked.connect(lambda: self.Switch_To_Page("Display_Mode_Page"))
-        self.Display_Mode_Btn2.clicked.connect(lambda: self.Switch_To_Page("Display_Mode_Page"))
+        self.Power_Mode_Btn1.clicked.connect(lambda: self.Switch_To_Page(2))
+        self.Power_Mode_Btn2.clicked.connect(lambda: self.Switch_To_Page(2))
 
-        self.Power_Saving_Btn1.clicked.connect(lambda: self.Switch_To_Page("Power_Saving_Page"))
-        self.Power_Saving_Btn2.clicked.connect(lambda: self.Switch_To_Page("Power_Saving_Page"))
-        
-    def Switch_To_Page(self, Page_Name):
-        widget = self.findChild(QWidget, Page_Name)
-        if widget:
-            index = self.stackedWidget.indexOf(widget)
-            if index != -1:
-                self.stackedWidget.setCurrentIndex(index)
-                setup_method = self.page_setup_methods.get(Page_Name)
-                if setup_method:
-                    setup_method()  # Call the corresponding setup method
-                
-            else:
-                print(f"Page '{Page_Name}' not found in stackedWidget.")
-        else:
-            print(f"No widget found with the name '{Page_Name}'")
-            
-    #Page Battery_Level
-    def get_battery_level(self):
-            return self.battery_level
-        
-    def set_battery_level(self, value):
-        self.battery_level = value
-        self.Progress_Bar_Value(value)  # Update progress bar value when battery level changes
-        self.Percent.setText(f"{self.battery_level}%")  # Update Percent label text
-        
-    battery_level_property = Property(int, get_battery_level, set_battery_level)
-    
-    def Battery_Level_SetUp(self):
-        # Animation từ 0 đến 75 cho Battery Level
-        self.animation = QPropertyAnimation(self, b"battery_level_property")
-        self.animation.setDuration(500)  # Thời gian animation (500ms)
-        self.animation.setStartValue(0)
-        self.animation.setEndValue(75)  # Change this to the desired end value
-        self.animation.start()
-    
+        self.Brightness_Btn1.clicked.connect(lambda: self.Switch_To_Page(3))
+        self.Brightness_Btn2.clicked.connect(lambda: self.Switch_To_Page(3))
+
+        self.Display_Mode_Btn1.clicked.connect(lambda: self.Switch_To_Page(4))
+        self.Display_Mode_Btn2.clicked.connect(lambda: self.Switch_To_Page(4))
+
+        self.Power_Saving_Btn1.clicked.connect(lambda: self.Switch_To_Page(5))
+        self.Power_Saving_Btn2.clicked.connect(lambda: self.Switch_To_Page(5))
+
+    def Switch_To_Page(self, Page_Number):
+        self.stackedWidget.setCurrentIndex(Page_Number)
+
+    # def Page_Changed(self, Page_Number):
+    #     if Page_Number == 1:
+    #         self.Battery_Level_SetUp()
+
+    def update_battery(self):
+        battery_level = 100
+        while not self.stop_thread:  # Liên tục cập nhật khi cờ không được bật
+            newvalue = random_number()
+            if battery_level != newvalue:
+                battery_level = newvalue
+                QtCore.QMetaObject.invokeMethod(
+                    self,
+                    "Progress_Bar_Value",
+                    QtCore.Qt.QueuedConnection,
+                    QtCore.Q_ARG(int, battery_level),
+                )
+            time.sleep(1)  # Cập nhật mỗi 2 giây
+
     # Hàm cập nhật giá trị thanh progress bar
+    @QtCore.Slot(int)
     def Progress_Bar_Value(self, value):
         styleSheet = """
         QFrame{
@@ -86,9 +79,15 @@ class Form(QMainWindow, Ui_MainWindow):
         progress = (100 - value) / 100
         stop_1 = str(progress - 0.001)
         stop_2 = str(progress)
-        
-        newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
-        self.circle_lv.setStyleSheet(newStylesheet)
 
-        # Update Percent label text as the battery level changes
-        self.Percent.setText(f"{int(value)}%")
+        newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace(
+            "{STOP_2}", stop_2
+        )
+        self.circle_lv.setStyleSheet(newStylesheet)
+        self.Percent.setText(str(value) + "%")
+
+    # Ghi đè closeEvent để dừng luồng khi đóng ứng dụng
+    def closeEvent(self, event):
+        self.stop_thread = True  # Đặt cờ dừng luồng
+        self.thread1.join()  # Đợi cho luồng kết thúc
+        event.accept()  # Cho phép đóng ứng dụng

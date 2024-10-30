@@ -1,5 +1,5 @@
 import sys
-from Controller.Form import Form
+from Controller.Main import Form
 from PySide6.QtWidgets import QApplication
 
 if __name__ == "__main__":

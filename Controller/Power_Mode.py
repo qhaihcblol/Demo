@@ -1,6 +1,8 @@
-from PySide6.QtWidgets import QMainWindow, QWidget
-from View.ui_form import Ui_MainWindow
-from Controller.Form import Form
-class Power_Mode_Page(QMainWindow,Ui_MainWindow):
-    pass
-        
+from PySide6.QtWidgets import QWidget
+from View.Power_Mode import Ui_Form
+
+
+class Power_Mode_Page(QWidget, Ui_Form):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)

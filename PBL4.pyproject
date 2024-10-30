@@ -1,6 +1,8 @@
 {
     "files": [
         "app.py",
-        "form.ui"
+        "battery_level_form.ui",
+        "power_mode_form.ui",
+        "main_form.ui"
     ]
 }

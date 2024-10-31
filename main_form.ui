@@ -556,7 +556,7 @@ QPushButton:checked{
         </widget>
        </item>
        <item>
-        <widget class="QStackedWidget" name="stacked_Widget">
+        <widget class="QStackedWidget" name="Stacked_Widget">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>

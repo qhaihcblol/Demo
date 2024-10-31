@@ -13,23 +13,23 @@ class Form(QMainWindow, Ui_MainWindow):
         self.setWindowTitle("Power Management")
         self.Menu_Btn.setChecked(True)
 
-        self.setUpSignal()
-        self.setUpPage()
+        self.setupSignal()
+        self.setupPage()
 
-    def setUpPage(self):
+    def setupPage(self):
         self.Info_Page = Info_Page()
         self.Battery_Level_Page = Battery_Level_Page()
         self.Power_Mode_Page = Power_Mode_Page()
         self.deleteAllPage()
-        self.stacked_Widget.addWidget(self.Info_Page)
-        self.stacked_Widget.addWidget(self.Battery_Level_Page)
-        self.stacked_Widget.addWidget(self.Power_Mode_Page)
+        self.Stacked_Widget.addWidget(self.Info_Page)
+        self.Stacked_Widget.addWidget(self.Battery_Level_Page)
+        self.Stacked_Widget.addWidget(self.Power_Mode_Page)
 
     def deleteAllPage(self):
-        while self.stacked_Widget.count() > 0:
-            self.stacked_Widget.removeWidget(self.stacked_Widget.widget(0))
+        while self.Stacked_Widget.count() > 0:
+            self.Stacked_Widget.removeWidget(self.Stacked_Widget.widget(0))
 
-    def setUpSignal(self):
+    def setupSignal(self):
         Button_Page_Mapping = {
             self.Info_Btn: 0,
             self.Battery_Level_Btn1: 1,
@@ -40,9 +40,13 @@ class Form(QMainWindow, Ui_MainWindow):
         for button, page in Button_Page_Mapping.items():
             button.clicked.connect(lambda _, p=page: self.switchToPage(p))
 
+        self.Stacked_Widget.currentChanged.connect(self.onPageChanged)
+
     def switchToPage(self, Page_Number):
-        self.stacked_Widget.setCurrentIndex(Page_Number)
-        if Page_Number == 1:  # Nếu chuyển đến Battery_Level_Page
-            self.Battery_Level_Page.start()  # Khởi động cập nhật pin
+        self.Stacked_Widget.setCurrentIndex(Page_Number)
+
+    def onPageChanged(self, Page_Number):
+        if Page_Number == 1:  # Battery Level Page
+            self.Battery_Level_Page.start()
         else:
-            self.Battery_Level_Page.stop()  # Dừng cập nhật pin nếu chuyển trang khác
+            self.Battery_Level_Page.stop()

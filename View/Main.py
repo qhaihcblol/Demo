@@ -321,11 +321,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.header_widget)
 
-        self.stacked_Widget = QStackedWidget(self.main_menu_widget)
-        self.stacked_Widget.setObjectName(u"stacked_Widget")
-        self.stacked_Widget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.Stacked_Widget = QStackedWidget(self.main_menu_widget)
+        self.Stacked_Widget.setObjectName(u"Stacked_Widget")
+        self.Stacked_Widget.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_5.addWidget(self.stacked_Widget)
+        self.verticalLayout_5.addWidget(self.Stacked_Widget)
 
 
         self.gridLayout.addWidget(self.main_menu_widget, 0, 2, 1, 1)

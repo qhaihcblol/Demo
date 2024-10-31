@@ -3,6 +3,7 @@
         "app.py",
         "battery_level_form.ui",
         "power_mode_form.ui",
-        "main_form.ui"
+        "main_form.ui",
+        "info_form.ui"
     ]
 }

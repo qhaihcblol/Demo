@@ -1,38 +1,38 @@
 from PySide6.QtWidgets import QWidget
-from PySide6.QtCore import QThread, QTimer
+from PySide6.QtCore import QTimer
 from View.Battery_Level import Ui_Form
 import subprocess
+import os
 
 
-class Battery_Level_Page(QWidget, QThread, Ui_Form):
+class Battery_Level_Page(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_percent)
+
+    def start(self):
         self.timer.start(1000)
-        
+        self.update_percent()
+
+    def stop(self):
+        self.timer.stop()
+
     def get_battery_percentage(self):
         try:
-            # Gọi lệnh để lấy thông tin pin
+            script_path = os.path.join("Model", "Get_Battery_Level.sh")
             output = subprocess.check_output(
-                ["upower", "-i", "/org/freedesktop/UPower/devices/battery_BAT0"], 
-                stderr=subprocess.STDOUT, 
-                universal_newlines=True
+                ["bash", script_path], stderr=subprocess.STDOUT, universal_newlines=True
             )
-            # Tìm dòng chứa thông tin phần trăm
-            for line in output.splitlines():
-                if "percentage" in line:
-                    # Trích xuất giá trị phần trăm
-                    percentage = int(line.split(":")[1].strip().replace("%", ""))
-                    return percentage
+            percentage = int(output.strip())
+            return percentage
         except subprocess.CalledProcessError as e:
             print("Error retrieving battery percentage:", e.output)
-            return 0  # Giá trị mặc định nếu không lấy được
+            return 0
         except FileNotFoundError:
-            print("The command 'upower' is not found. Please ensure it is installed.")
-            return 0  # Giá trị mặc định nếu không tìm thấy lệnh
+            print(f"The shell script '{script_path}' is not found.")
+            return 0
 
     def get_progress_stylesheet(self, progress):
         styleSheet = """
@@ -45,18 +45,15 @@ class Battery_Level_Page(QWidget, QThread, Ui_Form):
         stop_2 = str(progress)
         return styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
 
-
     def update_percent(self):
-        # Lấy giá trị phần trăm pin
         value = self.get_battery_percentage()
         print(value)  # Test
-        self.Percent.setText(str(value))
+        self.Percent.setText(
+            f"<span style='font-size:36pt;'>{value}</span><span style='font-size:24pt; vertical-align:super;'>%</span>"
+        )
+        progress = max(0.001, min((100 - value) / 100, 1))
+        new_stylesheet = self.get_progress_stylesheet(progress)
+        self.circle_lv.setStyleSheet(new_stylesheet)
 
-        # Tính Circle Progress
-        progress = max(0, min((100 - value) / 100, 1))  # Đảm bảo progress nằm trong [0, 1]
-        newStylesheet = self.get_progress_stylesheet(progress)
-        self.circle_lv.setStyleSheet(newStylesheet)
-        # if(self.isVisible()):
-        #     print("Yes")
-        # else:
-        #     print("No")
+    def animation_load(self):
+        pass

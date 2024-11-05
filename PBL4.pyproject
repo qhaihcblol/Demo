@@ -4,6 +4,9 @@
         "battery_level_form.ui",
         "power_mode_form.ui",
         "main_form.ui",
-        "info_form.ui"
+        "info_form.ui",
+        "brightness_form.ui",
+        "login_form.ui",
+        "res.qrc"
     ]
 }

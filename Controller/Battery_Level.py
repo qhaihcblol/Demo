@@ -28,7 +28,9 @@ class Battery_Level_Page(QWidget, Ui_Form):
         self.animation.setStartValue(0)
         self.animation.setEndValue(value)
         self.animation.setDuration(1000)  # Animation kéo dài 1 giây
-        self.animation.valueChanged.connect(self.updateBattery) # Khi giá trị animation thay đổi, cập nhật hiển thị pin
+        self.animation.valueChanged.connect(
+            self.updateBattery
+        )  # Khi giá trị animation thay đổi, cập nhật hiển thị pin
         self.animation.start()
 
     def updateBattery(self, value=None):

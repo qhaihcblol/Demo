@@ -13,18 +13,49 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QGroupBox" name="Power_Mode_Option">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>130</y>
-     <width>131</width>
-     <height>26</height>
+     <x>110</x>
+     <y>60</y>
+     <width>341</width>
+     <height>221</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Power Mode Page</string>
+   <property name="styleSheet">
+    <string notr="true">QRadioButton{
+	background-color: rgb(153, 193, 241);
+	border-radius:5px;
+	padding:15px;
+}
+</string>
    </property>
+   <property name="title">
+    <string>Power Mode</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QRadioButton" name="Performance_RBtn">
+      <property name="text">
+       <string>Performance</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="Balanced_RBtn">
+      <property name="text">
+       <string>Balanced</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="PowerSaver_RBtn">
+      <property name="text">
+       <string>Power Saver</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

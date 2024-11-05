@@ -71,7 +71,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>Resource/profile_pic.png</pixmap>
+            <pixmap resource="res.qrc">:/image/Resource/profile_pic.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -94,9 +94,9 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/dashboard_white.png</normaloff>
-             <normalon>Resource/dashboard.png</normalon>Resource/dashboard_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/dashboard_white.png</normaloff>
+             <normalon>:/image/Resource/dashboard.png</normalon>:/image/Resource/dashboard_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -112,9 +112,9 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/profile_white.png</normaloff>
-             <normalon>Resource/profile.png</normalon>Resource/profile_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/profile_white.png</normaloff>
+             <normalon>:/image/Resource/profile.png</normalon>:/image/Resource/profile_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -130,9 +130,9 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/messages_white.png</normaloff>
-             <normalon>Resource/messages.png</normalon>Resource/messages_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/messages_white.png</normaloff>
+             <normalon>:/image/Resource/messages.png</normalon>:/image/Resource/messages_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -148,9 +148,9 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/notifications_white.png</normaloff>
-             <normalon>Resource/notifications.png</normalon>Resource/notifications_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/notifications_white.png</normaloff>
+             <normalon>:/image/Resource/notifications.png</normalon>:/image/Resource/notifications_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -166,9 +166,9 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/settings_white.png</normaloff>
-             <normalon>Resource/settings.png</normalon>Resource/settings_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/settings_white.png</normaloff>
+             <normalon>:/image/Resource/settings.png</normalon>:/image/Resource/settings_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -199,8 +199,8 @@ QPushButton:checked{
           <string/>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>Resource/log_out_white.png</normaloff>Resource/log_out_white.png</iconset>
+          <iconset resource="res.qrc">
+           <normaloff>:/image/Resource/log_out_white.png</normaloff>:/image/Resource/log_out_white.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -262,7 +262,7 @@ QPushButton:checked{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>Resource/profile_pic.png</pixmap>
+            <pixmap resource="res.qrc">:/image/Resource/profile_pic.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -303,9 +303,9 @@ QPushButton:checked{
             <string>Battery Level</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/dashboard_white.png</normaloff>
-             <normalon>Resource/dashboard.png</normalon>Resource/dashboard_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/dashboard_white.png</normaloff>
+             <normalon>:/image/Resource/dashboard.png</normalon>:/image/Resource/dashboard_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -326,9 +326,9 @@ QPushButton:checked{
             <string>Power Mode</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/profile_white.png</normaloff>
-             <normalon>Resource/profile.png</normalon>Resource/profile_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/profile_white.png</normaloff>
+             <normalon>:/image/Resource/profile.png</normalon>:/image/Resource/profile_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -349,9 +349,9 @@ QPushButton:checked{
             <string>Brightness</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/messages_white.png</normaloff>
-             <normalon>Resource/messages.png</normalon>Resource/messages_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/messages_white.png</normaloff>
+             <normalon>:/image/Resource/messages.png</normalon>:/image/Resource/messages_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -372,9 +372,9 @@ QPushButton:checked{
             <string>Display Mode</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/notifications_white.png</normaloff>
-             <normalon>Resource/notifications.png</normalon>Resource/notifications_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/notifications_white.png</normaloff>
+             <normalon>:/image/Resource/notifications.png</normalon>:/image/Resource/notifications_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -395,9 +395,9 @@ QPushButton:checked{
             <string>Power Saving</string>
            </property>
            <property name="icon">
-            <iconset>
-             <normaloff>Resource/settings_white.png</normaloff>
-             <normalon>Resource/settings.png</normalon>Resource/settings_white.png</iconset>
+            <iconset resource="res.qrc">
+             <normaloff>:/image/Resource/settings_white.png</normaloff>
+             <normalon>:/image/Resource/settings.png</normalon>:/image/Resource/settings_white.png</iconset>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -433,8 +433,8 @@ QPushButton:checked{
           <string>Sign Out</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>Resource/log_out_white.png</normaloff>Resource/log_out_white.png</iconset>
+          <iconset resource="res.qrc">
+           <normaloff>:/image/Resource/log_out_white.png</normaloff>:/image/Resource/log_out_white.png</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -462,8 +462,8 @@ QPushButton:checked{
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>Resource/menu.png</normaloff>Resource/menu.png</iconset>
+             <iconset resource="res.qrc">
+              <normaloff>:/image/Resource/menu.png</normaloff>:/image/Resource/menu.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -535,8 +535,8 @@ QPushButton:checked{
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>Resource/image.png</normaloff>Resource/image.png</iconset>
+             <iconset resource="res.qrc">
+              <normaloff>:/image/Resource/image.png</normaloff>:/image/Resource/image.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -568,7 +568,9 @@ QPushButton:checked{
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>Menu_Btn</sender>

@@ -6,8 +6,5 @@ if ! command -v brightnessctl &> /dev/null; then
     exit 1
 fi
 
-# Lấy giá trị độ sáng từ tham số đầu vào
-brightness_value=$1
-
-# Thiết lập độ sáng
-brightnessctl -q set "${brightness_value}"
+# Lấy giá trị độ sáng hiện tại
+brightnessctl get

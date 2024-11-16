@@ -9,32 +9,35 @@ class Battery_Level_Page(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
         self.timer = QTimer(self)
-        self.timer.timeout.connect(
-            self.updateBattery
-        )  # Gọi updateBattery mỗi giây để lấy thông tin pin
+        self.timer.timeout.connect(self.updateBattery)
         self.animation = QVariantAnimation(self)
 
-    def start(self):
+    def showEvent(self, event):
+        """Bắt đầu cập nhật khi trang được hiển thị."""
         self.timer.start(1000)  # Bắt đầu lấy dữ liệu pin mỗi giây
         self.animationLoad(self.getBatteryPercentage())
+        super().showEvent(event)
 
-    def stop(self):
-        self.timer.stop()  # Dừng cập nhật pin
+    def hideEvent(self, event):
+        """Dừng cập nhật khi trang bị ẩn."""
+        self.timer.stop()
+        if self.animation.state() == QVariantAnimation.Running:
+            self.animation.stop()
+        super().hideEvent(event)
 
     def animationLoad(self, value):
         if self.animation.state() == QVariantAnimation.Running:
             self.animation.stop()
         self.animation.setStartValue(0)
         self.animation.setEndValue(value)
-        self.animation.setDuration(1000)  # Animation kéo dài 1 giây
-        self.animation.valueChanged.connect(
-            self.updateBattery
-        )  # Khi giá trị animation thay đổi, cập nhật hiển thị pin
+        self.animation.setDuration(1000)
+        self.animation.valueChanged.connect(self.updateBattery)
         self.animation.start()
 
     def updateBattery(self, value=None):
-        if value is None:  # Nếu không có giá trị từ animation, lấy giá trị pin hiện tại
+        if value is None:
             value = self.getBatteryPercentage()
 
         # Cập nhật hiển thị phần trăm pin
@@ -42,7 +45,7 @@ class Battery_Level_Page(QWidget, Ui_Form):
             f"<span style='font-size:36pt;'>{int(value)}</span><span style='font-size:24pt; vertical-align:super;'>%</span>"
         )
 
-        # Tính toán progress và cập nhật stylesheet cho circle_lv
+        # Cập nhật progress và stylesheet cho circle_lv
         progress = max(0.001, min((100 - value) / 100, 1))
         new_stylesheet = self.getProgressStylesheet(progress)
         self.circle_lv.setStyleSheet(new_stylesheet)

@@ -57,6 +57,12 @@
 	padding:10px;
 }</string>
       </property>
+      <property name="minimum">
+       <number>9</number>
+      </property>
+      <property name="maximum">
+       <number>937</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Orientation::Horizontal</enum>
       </property>

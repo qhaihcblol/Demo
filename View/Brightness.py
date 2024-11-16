@@ -46,6 +46,8 @@ class Ui_Form(object):
 "	border-radius:15px;\n"
 "	padding:10px;\n"
 "}")
+        self.Brightness_Slider.setMinimum(9)
+        self.Brightness_Slider.setMaximum(937)
         self.Brightness_Slider.setOrientation(Qt.Orientation.Horizontal)
         self.Brightness_Slider.setTickPosition(QSlider.TickPosition.NoTicks)
 

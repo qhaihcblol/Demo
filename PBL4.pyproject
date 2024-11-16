@@ -7,6 +7,8 @@
         "info_form.ui",
         "brightness_form.ui",
         "login_form.ui",
-        "res.qrc"
+        "res.qrc",
+        "power_saving_form.ui",
+        "display_mode_form.ui"
     ]
 }

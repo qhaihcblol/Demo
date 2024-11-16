@@ -7,4 +7,4 @@ USERNAME=$(whoami)
 # USERNAME=$USER
 
 # In tên người dùng
-echo "Tên người dùng hiện tại là: $USERNAME"
+echo "$USERNAME"

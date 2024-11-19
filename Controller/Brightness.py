@@ -30,10 +30,10 @@ class Brightness_Page(QWidget, Ui_Form):
         super().__init__()
         self.setupUi(self)
         self.brightness_worker = BrightnessWorker()
-        self.brightness_worker.brightness_signal.connect(self.updateSlider)
         self.setupSignal()
 
     def setupSignal(self):
+        self.brightness_worker.brightness_signal.connect(self.updateSlider)
         self.Brightness_Slider.valueChanged.connect(self.setBrightness)
 
     def showEvent(self, event):
@@ -58,7 +58,9 @@ class Brightness_Page(QWidget, Ui_Form):
             subprocess.run(["bash", script_path, str(value)], check=True, text=True)
         except subprocess.CalledProcessError as e:
             print(f"Error: Unable to set brightness. {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
 
-    def getPercentage(self, value):
-        max_brightness = 937
-        return round((value / max_brightness) * 100)
+    # def getPercentage(self, value):
+    #     max_brightness = 937
+    #     return round((value / max_brightness) * 100)

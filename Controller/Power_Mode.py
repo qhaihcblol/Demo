@@ -21,7 +21,6 @@ class PowerModeWorker(QThread):
                 print(f"Error: Unable to get power mode. {e}")
             except Exception as e:
                 print(f"Unexpected error: {e}")
-            time.sleep(0.1)
 
 
 class Power_Mode_Page(QWidget, Ui_Form):
@@ -29,10 +28,11 @@ class Power_Mode_Page(QWidget, Ui_Form):
         super().__init__()
         self.setupUi(self)
         self.powermode_worker = PowerModeWorker()
-        self.powermode_worker.powermode_signal.connect(self.updateRadioBtn)
+        self.updating = False  # Biến kiểm soát cập nhật
         self.setupSignal()
 
     def setupSignal(self):
+        self.powermode_worker.powermode_signal.connect(self.updateRadioBtn)
         self.Performance_RBtn.clicked.connect(lambda: self.setPowerMode("performance"))
         self.Balanced_RBtn.clicked.connect(lambda: self.setPowerMode("balanced"))
         self.PowerSaver_RBtn.clicked.connect(lambda: self.setPowerMode("power-saver"))
@@ -48,13 +48,17 @@ class Power_Mode_Page(QWidget, Ui_Form):
         super().hideEvent(event)
 
     def updateRadioBtn(self, mode):
-        if mode == "performance":
-            self.Performance_RBtn.setChecked(True)
-        elif mode == "balanced":
-            self.Balanced_RBtn.setChecked(True)
-        elif mode == "power-saver":
-            self.PowerSaver_RBtn.setChecked(True)
+        if not self.updating:  # Chỉ cập nhật khi không đang thay đổi từ ứng dụng
+            if mode == "performance":
+                self.Performance_RBtn.setChecked(True)
+            elif mode == "balanced":
+                self.Balanced_RBtn.setChecked(True)
+            elif mode == "power-saver":
+                self.PowerSaver_RBtn.setChecked(True)
 
     def setPowerMode(self, mode):
+        self.updating = True  # Ngăn cập nhật trong thời gian ngắn
         script_path = os.path.join("Model", "Set_Power_Mode.sh")
         subprocess.run(["bash", script_path, mode], check=True, text=True)
+        time.sleep(0.1)  # Tạm dừng trước khi cho phép cập nhật lại
+        self.updating = False

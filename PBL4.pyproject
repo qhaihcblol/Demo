@@ -9,6 +9,6 @@
         "login_form.ui",
         "res.qrc",
         "power_saving_form.ui",
-        "display_mode_form.ui"
+        "general_form.ui"
     ]
 }

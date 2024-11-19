@@ -102,27 +102,27 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.Brightness_Btn1)
 
-        self.Display_Mode_Btn1 = QPushButton(self.icon_only_widget)
-        self.Display_Mode_Btn1.setObjectName(u"Display_Mode_Btn1")
+        self.Power_Saving_Btn1 = QPushButton(self.icon_only_widget)
+        self.Power_Saving_Btn1.setObjectName(u"Power_Saving_Btn1")
         icon3 = QIcon()
         icon3.addFile(u":/image/Resource/notifications_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         icon3.addFile(u":/image/Resource/notifications.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
-        self.Display_Mode_Btn1.setIcon(icon3)
-        self.Display_Mode_Btn1.setCheckable(True)
-        self.Display_Mode_Btn1.setAutoExclusive(True)
-
-        self.verticalLayout.addWidget(self.Display_Mode_Btn1)
-
-        self.Power_Saving_Btn1 = QPushButton(self.icon_only_widget)
-        self.Power_Saving_Btn1.setObjectName(u"Power_Saving_Btn1")
-        icon4 = QIcon()
-        icon4.addFile(u":/image/Resource/settings_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon4.addFile(u":/image/Resource/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
-        self.Power_Saving_Btn1.setIcon(icon4)
+        self.Power_Saving_Btn1.setIcon(icon3)
         self.Power_Saving_Btn1.setCheckable(True)
         self.Power_Saving_Btn1.setAutoExclusive(True)
 
         self.verticalLayout.addWidget(self.Power_Saving_Btn1)
+
+        self.General_Btn1 = QPushButton(self.icon_only_widget)
+        self.General_Btn1.setObjectName(u"General_Btn1")
+        icon4 = QIcon()
+        icon4.addFile(u":/image/Resource/settings_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon4.addFile(u":/image/Resource/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        self.General_Btn1.setIcon(icon4)
+        self.General_Btn1.setCheckable(True)
+        self.General_Btn1.setAutoExclusive(True)
+
+        self.verticalLayout.addWidget(self.General_Btn1)
 
 
         self.verticalLayout_3.addLayout(self.verticalLayout)
@@ -224,23 +224,23 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.Brightness_Btn2)
 
-        self.Display_Mode_Btn2 = QPushButton(self.icon_name_widget)
-        self.Display_Mode_Btn2.setObjectName(u"Display_Mode_Btn2")
-        self.Display_Mode_Btn2.setFont(font1)
-        self.Display_Mode_Btn2.setIcon(icon3)
-        self.Display_Mode_Btn2.setCheckable(True)
-        self.Display_Mode_Btn2.setAutoExclusive(True)
-
-        self.verticalLayout_2.addWidget(self.Display_Mode_Btn2)
-
         self.Power_Saving_Btn2 = QPushButton(self.icon_name_widget)
         self.Power_Saving_Btn2.setObjectName(u"Power_Saving_Btn2")
         self.Power_Saving_Btn2.setFont(font1)
-        self.Power_Saving_Btn2.setIcon(icon4)
+        self.Power_Saving_Btn2.setIcon(icon3)
         self.Power_Saving_Btn2.setCheckable(True)
         self.Power_Saving_Btn2.setAutoExclusive(True)
 
         self.verticalLayout_2.addWidget(self.Power_Saving_Btn2)
+
+        self.General_Btn2 = QPushButton(self.icon_name_widget)
+        self.General_Btn2.setObjectName(u"General_Btn2")
+        self.General_Btn2.setFont(font1)
+        self.General_Btn2.setIcon(icon4)
+        self.General_Btn2.setCheckable(True)
+        self.General_Btn2.setAutoExclusive(True)
+
+        self.verticalLayout_2.addWidget(self.General_Btn2)
 
 
         self.verticalLayout_4.addLayout(self.verticalLayout_2)
@@ -336,16 +336,16 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.Menu_Btn.toggled.connect(self.icon_only_widget.setHidden)
         self.Menu_Btn.toggled.connect(self.icon_name_widget.setVisible)
+        self.General_Btn1.toggled.connect(self.General_Btn2.setChecked)
         self.Power_Saving_Btn1.toggled.connect(self.Power_Saving_Btn2.setChecked)
-        self.Display_Mode_Btn1.toggled.connect(self.Display_Mode_Btn2.setChecked)
         self.Brightness_Btn1.toggled.connect(self.Brightness_Btn2.setChecked)
         self.Power_Mode_Btn1.toggled.connect(self.Power_Mode_Btn2.setChecked)
         self.Battery_Level_Btn1.toggled.connect(self.Battery_Level_Btn2.setChecked)
         self.Battery_Level_Btn2.toggled.connect(self.Battery_Level_Btn1.setChecked)
         self.Power_Mode_Btn2.toggled.connect(self.Power_Mode_Btn1.setChecked)
         self.Brightness_Btn2.toggled.connect(self.Brightness_Btn1.setChecked)
-        self.Display_Mode_Btn2.toggled.connect(self.Display_Mode_Btn1.setChecked)
         self.Power_Saving_Btn2.toggled.connect(self.Power_Saving_Btn1.setChecked)
+        self.General_Btn2.toggled.connect(self.General_Btn1.setChecked)
         self.Sign_Out_Btn1.toggled.connect(MainWindow.close)
         self.Sign_Out_Btn2.toggled.connect(MainWindow.close)
 
@@ -358,16 +358,16 @@ class Ui_MainWindow(object):
         self.Battery_Level_Btn1.setText("")
         self.Power_Mode_Btn1.setText("")
         self.Brightness_Btn1.setText("")
-        self.Display_Mode_Btn1.setText("")
         self.Power_Saving_Btn1.setText("")
+        self.General_Btn1.setText("")
         self.Sign_Out_Btn1.setText("")
         self.Logo_Label.setText("")
         self.SideBar_Label.setText(QCoreApplication.translate("MainWindow", u"Sidebar", None))
         self.Battery_Level_Btn2.setText(QCoreApplication.translate("MainWindow", u"Battery Level", None))
         self.Power_Mode_Btn2.setText(QCoreApplication.translate("MainWindow", u"Power Mode", None))
         self.Brightness_Btn2.setText(QCoreApplication.translate("MainWindow", u"Brightness", None))
-        self.Display_Mode_Btn2.setText(QCoreApplication.translate("MainWindow", u"Display Mode", None))
         self.Power_Saving_Btn2.setText(QCoreApplication.translate("MainWindow", u"Power Saving", None))
+        self.General_Btn2.setText(QCoreApplication.translate("MainWindow", u"General", None))
         self.Sign_Out_Btn2.setText(QCoreApplication.translate("MainWindow", u"Sign Out", None))
         self.Menu_Btn.setText("")
         self.pushButton_14.setText("")

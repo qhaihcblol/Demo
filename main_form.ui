@@ -143,7 +143,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="Display_Mode_Btn1">
+          <widget class="QPushButton" name="Power_Saving_Btn1">
            <property name="text">
             <string/>
            </property>
@@ -161,7 +161,7 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="Power_Saving_Btn1">
+          <widget class="QPushButton" name="General_Btn1">
            <property name="text">
             <string/>
            </property>
@@ -362,14 +362,14 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="Display_Mode_Btn2">
+          <widget class="QPushButton" name="Power_Saving_Btn2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
             </font>
            </property>
            <property name="text">
-            <string>Display Mode</string>
+            <string>Power Saving</string>
            </property>
            <property name="icon">
             <iconset resource="res.qrc">
@@ -385,14 +385,14 @@ QPushButton:checked{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="Power_Saving_Btn2">
+          <widget class="QPushButton" name="General_Btn2">
            <property name="font">
             <font>
              <pointsize>10</pointsize>
             </font>
            </property>
            <property name="text">
-            <string>Power Saving</string>
+            <string>General</string>
            </property>
            <property name="icon">
             <iconset resource="res.qrc">
@@ -605,9 +605,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>Power_Saving_Btn1</sender>
+   <sender>General_Btn1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>Power_Saving_Btn2</receiver>
+   <receiver>General_Btn2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -621,9 +621,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>Display_Mode_Btn1</sender>
+   <sender>Power_Saving_Btn1</sender>
    <signal>toggled(bool)</signal>
-   <receiver>Display_Mode_Btn2</receiver>
+   <receiver>Power_Saving_Btn2</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -733,9 +733,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>Display_Mode_Btn2</sender>
+   <sender>Power_Saving_Btn2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>Display_Mode_Btn1</receiver>
+   <receiver>Power_Saving_Btn1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -749,9 +749,9 @@ QPushButton:checked{
    </hints>
   </connection>
   <connection>
-   <sender>Power_Saving_Btn2</sender>
+   <sender>General_Btn2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>Power_Saving_Btn1</receiver>
+   <receiver>General_Btn1</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">

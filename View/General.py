@@ -15,7 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QSizePolicy,
+    QWidget)
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -24,7 +25,10 @@ class Ui_Form(object):
         Form.resize(576, 380)
         self.label = QLabel(Form)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(280, 70, 66, 18))
+        self.label.setGeometry(QRect(60, 60, 151, 18))
+        self.comboBox = QComboBox(Form)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(240, 60, 111, 26))
 
         self.retranslateUi(Form)
 
@@ -33,6 +37,6 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.label.setText(QCoreApplication.translate("Form", u"General", None))
+        self.label.setText(QCoreApplication.translate("Form", u"Power Button Behavir", None))
     # retranslateUi
 

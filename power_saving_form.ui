@@ -44,7 +44,7 @@
     <rect>
      <x>270</x>
      <y>60</y>
-     <width>86</width>
+     <width>101</width>
      <height>26</height>
     </rect>
    </property>
@@ -156,10 +156,60 @@
     <rect>
      <x>280</x>
      <y>240</y>
-     <width>86</width>
+     <width>101</width>
      <height>26</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>15 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>20 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>25 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>30 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>45 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1 hour</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>80 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>90 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>100 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2 hours</string>
+    </property>
+   </item>
   </widget>
   <widget class="QCheckBox" name="Plugged_In_CB">
    <property name="geometry">
@@ -192,10 +242,60 @@
     <rect>
      <x>280</x>
      <y>320</y>
-     <width>86</width>
+     <width>101</width>
      <height>26</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>15 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>20 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>25 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>30 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>45 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1 hour</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>80 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>90 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>100 minutes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2 hours</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

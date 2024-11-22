@@ -12,7 +12,7 @@ class BrightnessWorker(QThread):
     def run(self):
         while True:
             try:
-                script_path = os.path.join("Model", "Get_Brightness.sh")
+                script_path = os.path.join("Model", "Brightness", "Get_Brightness.sh")
                 result = subprocess.check_output(
                     ["bash", script_path], text=True
                 ).strip()
@@ -54,7 +54,7 @@ class Brightness_Page(QWidget, Ui_Form):
 
     def setBrightness(self, value):
         try:
-            script_path = os.path.join("Model", "Set_Brightness.sh")
+            script_path = os.path.join("Model", "Brightness", "Set_Brightness.sh")
             subprocess.run(["bash", script_path, str(value)], check=True, text=True)
         except subprocess.CalledProcessError as e:
             print(f"Error: Unable to set brightness. {e}")

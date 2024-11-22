@@ -12,7 +12,7 @@ class PowerModeWorker(QThread):
     def run(self):
         while True:
             try:
-                script_path = os.path.join("Model", "Get_Power_Mode.sh")
+                script_path = os.path.join("Model", "Power_Mode", "Get_Power_Mode.sh")
                 result = subprocess.check_output(
                     ["bash", script_path], text=True
                 ).strip()
@@ -57,8 +57,15 @@ class Power_Mode_Page(QWidget, Ui_Form):
                 self.PowerSaver_RBtn.setChecked(True)
 
     def setPowerMode(self, mode):
-        self.updating = True  # Ngăn cập nhật trong thời gian ngắn
-        script_path = os.path.join("Model", "Set_Power_Mode.sh")
-        subprocess.run(["bash", script_path, mode], check=True, text=True)
-        time.sleep(0.1)  # Tạm dừng trước khi cho phép cập nhật lại
-        self.updating = False
+        if not self.updating:
+            self.updating = True
+            script_path = os.path.join("Model", "Power_Mode", "Set_Power_Mode.sh")
+            try:
+                subprocess.run(["bash", script_path, mode], check=True, text=True)
+            except subprocess.CalledProcessError as e:
+                print(f"Error: Unable to set power mode. {e}")
+            except Exception as e:
+                print(f"Unexpected error: {e}")
+            finally:
+                time.sleep(0.1)
+                self.updating = False

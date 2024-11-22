@@ -52,7 +52,7 @@ class Battery_Level_Page(QWidget, Ui_Form):
 
     def getBatteryPercentage(self):
         try:
-            script_path = os.path.join("Model", "Get_Battery_Level.sh")
+            script_path = os.path.join("Model", "Battery_Level", "Get_Battery_Level.sh")
             output = subprocess.check_output(
                 ["bash", script_path], stderr=subprocess.STDOUT, universal_newlines=True
             )

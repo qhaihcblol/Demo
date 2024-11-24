@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>450</height>
+    <width>1000</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -535,13 +535,13 @@ QPushButton:checked{
              <string/>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="res.qrc">
               <normaloff>:/image/Resource/menu.png</normaloff>:/image/Resource/menu.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>20</width>
-              <height>20</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="checkable">
@@ -608,13 +608,13 @@ QPushButton:checked{
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/image/Resource/image.png</normaloff>:/image/Resource/image.png</iconset>
+             <iconset resource="res.qrc">
+              <normaloff>:/image/Resource/user.png</normaloff>:/image/Resource/user.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>20</width>
-              <height>20</height>
+              <width>30</width>
+              <height>30</height>
              </size>
             </property>
             <property name="checkable">

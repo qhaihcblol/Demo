@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 450)
+        MainWindow.resize(1000, 500)
         MainWindow.setStyleSheet(u"background-color: rgb(245, 250, 254);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -282,7 +282,7 @@ class Ui_MainWindow(object):
         icon6 = QIcon()
         icon6.addFile(u":/image/Resource/menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Menu_Btn.setIcon(icon6)
-        self.Menu_Btn.setIconSize(QSize(20, 20))
+        self.Menu_Btn.setIconSize(QSize(30, 30))
         self.Menu_Btn.setCheckable(True)
 
         self.horizontalLayout_4.addWidget(self.Menu_Btn)
@@ -318,9 +318,9 @@ class Ui_MainWindow(object):
         self.Info_Btn.setObjectName(u"Info_Btn")
         self.Info_Btn.setStyleSheet(u"border:none;")
         icon8 = QIcon()
-        icon8.addFile(u":/image/Resource/image.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon8.addFile(u":/image/Resource/user.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Info_Btn.setIcon(icon8)
-        self.Info_Btn.setIconSize(QSize(20, 20))
+        self.Info_Btn.setIconSize(QSize(30, 30))
         self.Info_Btn.setCheckable(False)
         self.Info_Btn.setAutoExclusive(False)
 

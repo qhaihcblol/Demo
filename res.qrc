@@ -7,5 +7,7 @@
         <file>Resource/powersaving.png</file>
         <file>Resource/general.png</file>
         <file>Resource/exit.png</file>
+        <file>Resource/menu.png</file>
+        <file>Resource/user.png</file>
     </qresource>
 </RCC>

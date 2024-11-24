@@ -1,0 +1,23 @@
+#!/bin/bash
+Option=$1
+case $Option in
+    1)
+        echo "Power off"
+        sudo poweroff
+        ;;
+    2)
+        echo "Reboot"
+        sudo reboot
+        ;;
+    3)
+        echo "Suspend"
+        sudo pm-suspend
+        ;;
+    4)
+        echo "Hibernate"
+        sudo pm-hibernate
+        ;;
+    *)
+        echo "Invalid Option"
+        ;;
+esac

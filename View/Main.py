@@ -39,9 +39,8 @@ class Ui_MainWindow(object):
 "QPushButton{\n"
 "	color:white;\n"
 "	text-align:left;\n"
-"	height:30px;\n"
 "	border:none;\n"
-"	padding-left:10px;\n"
+"	padding:5px 0px 5px 10px;\n"
 "	border-radius:10px;\n"
 "}\n"
 "QPushButton:checked{\n"
@@ -55,9 +54,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.Logo = QLabel(self.icon_only_widget)
         self.Logo.setObjectName(u"Logo")
-        self.Logo.setMinimumSize(QSize(40, 40))
-        self.Logo.setMaximumSize(QSize(40, 40))
-        self.Logo.setPixmap(QPixmap(u":/image/Resource/profile_pic.png"))
+        self.Logo.setMinimumSize(QSize(50, 50))
+        self.Logo.setMaximumSize(QSize(50, 50))
+        self.Logo.setPixmap(QPixmap(u":/image/Resource/logo.png"))
         self.Logo.setScaledContents(True)
 
         self.horizontalLayout_3.addWidget(self.Logo)
@@ -72,9 +71,9 @@ class Ui_MainWindow(object):
         self.Battery_Level_Btn1 = QPushButton(self.icon_only_widget)
         self.Battery_Level_Btn1.setObjectName(u"Battery_Level_Btn1")
         icon = QIcon()
-        icon.addFile(u":/image/Resource/dashboard_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon.addFile(u":/image/Resource/dashboard.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        icon.addFile(u":/image/Resource/battery.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Battery_Level_Btn1.setIcon(icon)
+        self.Battery_Level_Btn1.setIconSize(QSize(30, 30))
         self.Battery_Level_Btn1.setCheckable(True)
         self.Battery_Level_Btn1.setAutoExclusive(True)
 
@@ -83,9 +82,9 @@ class Ui_MainWindow(object):
         self.Power_Mode_Btn1 = QPushButton(self.icon_only_widget)
         self.Power_Mode_Btn1.setObjectName(u"Power_Mode_Btn1")
         icon1 = QIcon()
-        icon1.addFile(u":/image/Resource/profile_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon1.addFile(u":/image/Resource/profile.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        icon1.addFile(u":/image/Resource/powermode.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Power_Mode_Btn1.setIcon(icon1)
+        self.Power_Mode_Btn1.setIconSize(QSize(30, 30))
         self.Power_Mode_Btn1.setCheckable(True)
         self.Power_Mode_Btn1.setAutoExclusive(True)
 
@@ -94,9 +93,9 @@ class Ui_MainWindow(object):
         self.Brightness_Btn1 = QPushButton(self.icon_only_widget)
         self.Brightness_Btn1.setObjectName(u"Brightness_Btn1")
         icon2 = QIcon()
-        icon2.addFile(u":/image/Resource/messages_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon2.addFile(u":/image/Resource/messages.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        icon2.addFile(u":/image/Resource/brightness.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Brightness_Btn1.setIcon(icon2)
+        self.Brightness_Btn1.setIconSize(QSize(30, 30))
         self.Brightness_Btn1.setCheckable(True)
         self.Brightness_Btn1.setAutoExclusive(True)
 
@@ -105,9 +104,9 @@ class Ui_MainWindow(object):
         self.Power_Saving_Btn1 = QPushButton(self.icon_only_widget)
         self.Power_Saving_Btn1.setObjectName(u"Power_Saving_Btn1")
         icon3 = QIcon()
-        icon3.addFile(u":/image/Resource/notifications_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon3.addFile(u":/image/Resource/notifications.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        icon3.addFile(u":/image/Resource/powersaving.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Power_Saving_Btn1.setIcon(icon3)
+        self.Power_Saving_Btn1.setIconSize(QSize(30, 30))
         self.Power_Saving_Btn1.setCheckable(True)
         self.Power_Saving_Btn1.setAutoExclusive(True)
 
@@ -116,9 +115,9 @@ class Ui_MainWindow(object):
         self.General_Btn1 = QPushButton(self.icon_only_widget)
         self.General_Btn1.setObjectName(u"General_Btn1")
         icon4 = QIcon()
-        icon4.addFile(u":/image/Resource/settings_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        icon4.addFile(u":/image/Resource/settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.On)
+        icon4.addFile(u":/image/Resource/general.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.General_Btn1.setIcon(icon4)
+        self.General_Btn1.setIconSize(QSize(30, 30))
         self.General_Btn1.setCheckable(True)
         self.General_Btn1.setAutoExclusive(True)
 
@@ -134,8 +133,9 @@ class Ui_MainWindow(object):
         self.Sign_Out_Btn1 = QPushButton(self.icon_only_widget)
         self.Sign_Out_Btn1.setObjectName(u"Sign_Out_Btn1")
         icon5 = QIcon()
-        icon5.addFile(u":/image/Resource/log_out_white.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon5.addFile(u":/image/Resource/exit.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Sign_Out_Btn1.setIcon(icon5)
+        self.Sign_Out_Btn1.setIconSize(QSize(30, 30))
         self.Sign_Out_Btn1.setCheckable(True)
         self.Sign_Out_Btn1.setAutoExclusive(False)
 
@@ -153,11 +153,11 @@ class Ui_MainWindow(object):
 "QPushButton{\n"
 "	color:white;\n"
 "	text-align:left;\n"
-"	height:30px;\n"
 "	border:none;\n"
-"	padding-left:10px;\n"
+"	padding:5px 0px 5px 10px;\n"
 "	border-top-left-radius:10px;\n"
 "	border-bottom-left-radius:10px;\n"
+"	font:14px;\n"
 "}\n"
 "QPushButton:checked{\n"
 "	background-color:#f5fafe;\n"
@@ -172,9 +172,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setContentsMargins(-1, -1, 20, -1)
         self.Logo_Label = QLabel(self.icon_name_widget)
         self.Logo_Label.setObjectName(u"Logo_Label")
-        self.Logo_Label.setMinimumSize(QSize(40, 40))
-        self.Logo_Label.setMaximumSize(QSize(40, 40))
-        self.Logo_Label.setPixmap(QPixmap(u":/image/Resource/profile_pic.png"))
+        self.Logo_Label.setMinimumSize(QSize(50, 50))
+        self.Logo_Label.setMaximumSize(QSize(50, 50))
+        self.Logo_Label.setPixmap(QPixmap(u":/image/Resource/logo.png"))
         self.Logo_Label.setScaledContents(True)
 
         self.horizontalLayout_2.addWidget(self.Logo_Label)
@@ -198,9 +198,11 @@ class Ui_MainWindow(object):
         self.Battery_Level_Btn2 = QPushButton(self.icon_name_widget)
         self.Battery_Level_Btn2.setObjectName(u"Battery_Level_Btn2")
         font1 = QFont()
-        font1.setPointSize(10)
+        font1.setBold(False)
+        font1.setItalic(False)
         self.Battery_Level_Btn2.setFont(font1)
         self.Battery_Level_Btn2.setIcon(icon)
+        self.Battery_Level_Btn2.setIconSize(QSize(30, 30))
         self.Battery_Level_Btn2.setCheckable(True)
         self.Battery_Level_Btn2.setAutoExclusive(True)
 
@@ -210,6 +212,7 @@ class Ui_MainWindow(object):
         self.Power_Mode_Btn2.setObjectName(u"Power_Mode_Btn2")
         self.Power_Mode_Btn2.setFont(font1)
         self.Power_Mode_Btn2.setIcon(icon1)
+        self.Power_Mode_Btn2.setIconSize(QSize(30, 30))
         self.Power_Mode_Btn2.setCheckable(True)
         self.Power_Mode_Btn2.setAutoExclusive(True)
 
@@ -219,6 +222,7 @@ class Ui_MainWindow(object):
         self.Brightness_Btn2.setObjectName(u"Brightness_Btn2")
         self.Brightness_Btn2.setFont(font1)
         self.Brightness_Btn2.setIcon(icon2)
+        self.Brightness_Btn2.setIconSize(QSize(30, 30))
         self.Brightness_Btn2.setCheckable(True)
         self.Brightness_Btn2.setAutoExclusive(True)
 
@@ -228,6 +232,7 @@ class Ui_MainWindow(object):
         self.Power_Saving_Btn2.setObjectName(u"Power_Saving_Btn2")
         self.Power_Saving_Btn2.setFont(font1)
         self.Power_Saving_Btn2.setIcon(icon3)
+        self.Power_Saving_Btn2.setIconSize(QSize(30, 30))
         self.Power_Saving_Btn2.setCheckable(True)
         self.Power_Saving_Btn2.setAutoExclusive(True)
 
@@ -237,6 +242,7 @@ class Ui_MainWindow(object):
         self.General_Btn2.setObjectName(u"General_Btn2")
         self.General_Btn2.setFont(font1)
         self.General_Btn2.setIcon(icon4)
+        self.General_Btn2.setIconSize(QSize(30, 30))
         self.General_Btn2.setCheckable(True)
         self.General_Btn2.setAutoExclusive(True)
 
@@ -253,6 +259,7 @@ class Ui_MainWindow(object):
         self.Sign_Out_Btn2.setObjectName(u"Sign_Out_Btn2")
         self.Sign_Out_Btn2.setFont(font1)
         self.Sign_Out_Btn2.setIcon(icon5)
+        self.Sign_Out_Btn2.setIconSize(QSize(30, 30))
         self.Sign_Out_Btn2.setCheckable(True)
         self.Sign_Out_Btn2.setAutoExclusive(False)
 
@@ -340,14 +347,14 @@ class Ui_MainWindow(object):
         self.Power_Saving_Btn1.toggled.connect(self.Power_Saving_Btn2.setChecked)
         self.Brightness_Btn1.toggled.connect(self.Brightness_Btn2.setChecked)
         self.Power_Mode_Btn1.toggled.connect(self.Power_Mode_Btn2.setChecked)
-        self.Battery_Level_Btn1.toggled.connect(self.Battery_Level_Btn2.setChecked)
-        self.Battery_Level_Btn2.toggled.connect(self.Battery_Level_Btn1.setChecked)
         self.Power_Mode_Btn2.toggled.connect(self.Power_Mode_Btn1.setChecked)
         self.Brightness_Btn2.toggled.connect(self.Brightness_Btn1.setChecked)
         self.Power_Saving_Btn2.toggled.connect(self.Power_Saving_Btn1.setChecked)
         self.General_Btn2.toggled.connect(self.General_Btn1.setChecked)
         self.Sign_Out_Btn1.toggled.connect(MainWindow.close)
         self.Sign_Out_Btn2.toggled.connect(MainWindow.close)
+        self.Battery_Level_Btn1.toggled.connect(self.Battery_Level_Btn2.setChecked)
+        self.Battery_Level_Btn2.toggled.connect(self.Battery_Level_Btn1.setChecked)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -362,7 +369,7 @@ class Ui_MainWindow(object):
         self.General_Btn1.setText("")
         self.Sign_Out_Btn1.setText("")
         self.Logo_Label.setText("")
-        self.SideBar_Label.setText(QCoreApplication.translate("MainWindow", u"Sidebar", None))
+        self.SideBar_Label.setText(QCoreApplication.translate("MainWindow", u"Power Management", None))
         self.Battery_Level_Btn2.setText(QCoreApplication.translate("MainWindow", u"Battery Level", None))
         self.Power_Mode_Btn2.setText(QCoreApplication.translate("MainWindow", u"Power Mode", None))
         self.Brightness_Btn2.setText(QCoreApplication.translate("MainWindow", u"Brightness", None))

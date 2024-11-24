@@ -1,25 +1,11 @@
 <RCC>
     <qresource prefix="/image">
-        <file>Resource/settings_white.png</file>
-        <file>Resource/settings.png</file>
-        <file>Resource/search.png</file>
-        <file>Resource/profile_white.png</file>
-        <file>Resource/profile_pic.png</file>
-        <file>Resource/profile.png</file>
-        <file>Resource/notifications_white.png</file>
-        <file>Resource/notifications.png</file>
-        <file>Resource/messages_white.png</file>
-        <file>Resource/messages.png</file>
-        <file>Resource/menu.png</file>
-        <file>Resource/log_out_white.png</file>
-        <file>Resource/log_out.png</file>
-        <file>Resource/image.png</file>
-        <file>Resource/dashboard_white.png</file>
-        <file>Resource/dashboard.png</file>
+        <file>Resource/logo.png</file>
+        <file>Resource/battery.png</file>
         <file>Resource/brightness.png</file>
-        <file>Resource/login_bg.png</file>
-        <file>Resource/Logo.png</file>
-        <file>Resource/show.png</file>
-        <file>Resource/hide.png</file>
+        <file>Resource/powermode.png</file>
+        <file>Resource/powersaving.png</file>
+        <file>Resource/general.png</file>
+        <file>Resource/exit.png</file>
     </qresource>
 </RCC>

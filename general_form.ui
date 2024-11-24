@@ -16,24 +16,104 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
-     <width>151</width>
-     <height>18</height>
+     <x>130</x>
+     <y>70</y>
+     <width>171</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Power Button Behavir</string>
+    <string>Power Button Behavior</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="Power_Button_Behavior_CbB">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>60</y>
+     <x>310</x>
+     <y>70</y>
      <width>111</width>
      <height>26</height>
     </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Suspend</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Power Off</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nothing</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QCheckBox" name="Show_Battery_Percentage_CB">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>120</y>
+     <width>201</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Show Battery Percentage</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Suspend_Btn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>210</y>
+     <width>88</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Suspend</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Restart_Btn">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>210</y>
+     <width>88</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Restart</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Power_Off_Btn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>270</y>
+     <width>88</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Power Off</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Log_Out_Btn">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>270</y>
+     <width>88</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Log Out</string>
    </property>
   </widget>
  </widget>

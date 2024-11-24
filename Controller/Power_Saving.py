@@ -165,6 +165,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
         self.pluggedin_worker = PluggedInWorker()
         self.delayonbatterypower_worker = DelayOnBatteryPowerWorker()
         self.delaypluggedin_worker = DelayPluggedInWorker()
+        
         self.updating_screenblank = False
         self.updating_delayonbatterypower = False
         self.updating_delaypluggedin = False
@@ -397,6 +398,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
                 print(f"Unexpected error: {e}")
             finally:
                 self.updating_delayonbatterypower = False
+
     def updateDelayPluggedIn(self, time):
         if not self.updating_delaypluggedin:
             try:
@@ -417,6 +419,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
                 print(f"Warning: No matching index found for time: {time} seconds")
             except ValueError as e:
                 print(f"Error: Invalid time value received: {time}. {e}")
+
     def setDelayPluggedIn(self, item):
         if not self.updating_delaypluggedin:
             self.updating_delaypluggedin = True

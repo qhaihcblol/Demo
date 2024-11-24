@@ -56,7 +56,6 @@ class Form(QMainWindow, Ui_MainWindow):
         for button, page in Button_Page_Mapping.items():
             button.clicked.connect(lambda _, p=page: self.switchToPage(p))
 
-        # self.Stacked_Widget.currentChanged.connect(self.onPageChanged)
 
     def switchToPage(self, Page_Number):
         self.Stacked_Widget.setCurrentIndex(Page_Number)

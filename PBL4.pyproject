@@ -6,9 +6,8 @@
         "main_form.ui",
         "info_form.ui",
         "brightness_form.ui",
-        "login_form.ui",
-        "res.qrc",
         "power_saving_form.ui",
-        "general_form.ui"
+        "general_form.ui",
+        "res.qrc"
     ]
 }

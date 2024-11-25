@@ -10,7 +10,7 @@ class PowerModeWorker(QThread):
     powermode_signal = Signal(str)
 
     def run(self):
-        while True:
+        while self.isInterruptionRequested():
             try:
                 script_path = os.path.join("Model", "Power_Mode", "Get_Power_Mode.sh")
                 result = subprocess.check_output(
@@ -44,7 +44,9 @@ class Power_Mode_Page(QWidget, Ui_Form):
 
     def hideEvent(self, event):
         if self.powermode_worker.isRunning():
-            self.powermode_worker.terminate()
+            # self.powermode_worker.terminate()
+            self.powermode_worker.requestInterruption()
+            self.powermode_worker.wait()
         super().hideEvent(event)
 
     def updateRadioBtn(self, mode):

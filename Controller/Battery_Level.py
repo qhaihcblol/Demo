@@ -1,8 +1,29 @@
+from re import L
 from PySide6.QtWidgets import QWidget
-from PySide6.QtCore import QTimer, QVariantAnimation
+from PySide6.QtCore import QTimer, QVariantAnimation, QThread, Signal
 from View.Battery_Level import Ui_Form
 import subprocess
 import os
+
+
+class BatteryInfoWorker(QThread):
+    batteryinfo_signal = Signal(list)
+
+    def run(self):
+        while not self.isInterruptionRequested():
+            try:
+                script_path = os.path.join(
+                    "Model", "Battery_Level", "Get_Battery_Info.sh"
+                )
+                result = subprocess.check_output(
+                    ["bash", script_path], text=True
+                ).strip()
+                list_info = result.split("\n")
+                self.batteryinfo_signal.emit(list_info)
+            except subprocess.CalledProcessError as e:
+                print(f"Error: Unable to get battery info. {e}")
+            except Exception as e:
+                print(f"Unexpected error: {e}")
 
 
 class Battery_Level_Page(QWidget, Ui_Form):
@@ -11,20 +32,32 @@ class Battery_Level_Page(QWidget, Ui_Form):
         self.setupUi(self)
 
         self.timer = QTimer(self)
-        self.timer.timeout.connect(self.updateBattery)
         self.animation = QVariantAnimation(self)
+        self.batteryinfo_worker = BatteryInfoWorker()
+
+        self.setupSignal()
+
+    def setupSignal(self):
+        self.timer.timeout.connect(self.updateBattery)
+        self.animation.valueChanged.connect(self.updateBattery)
+        self.batteryinfo_worker.batteryinfo_signal.connect(self.updateBatteryInfo)
 
     def showEvent(self, event):
-        """Bắt đầu cập nhật khi trang được hiển thị."""
-        self.timer.start(1000)  # Bắt đầu lấy dữ liệu pin mỗi giây
+        if not self.batteryinfo_worker.isRunning():
+            self.batteryinfo_worker.start()
         self.animationLoad(self.getBatteryPercentage())
+
+        self.timer.start(1000)
         super().showEvent(event)
 
     def hideEvent(self, event):
-        """Dừng cập nhật khi trang bị ẩn."""
+        if self.batteryinfo_worker.isRunning():
+            self.batteryinfo_worker.requestInterruption()
+            self.batteryinfo_worker.wait()
         self.timer.stop()
         if self.animation.state() == QVariantAnimation.Running:
             self.animation.stop()
+
         super().hideEvent(event)
 
     def animationLoad(self, value):
@@ -33,7 +66,6 @@ class Battery_Level_Page(QWidget, Ui_Form):
         self.animation.setStartValue(0)
         self.animation.setEndValue(value)
         self.animation.setDuration(1000)
-        self.animation.valueChanged.connect(self.updateBattery)
         self.animation.start()
 
     def updateBattery(self, value=None):
@@ -74,3 +106,9 @@ class Battery_Level_Page(QWidget, Ui_Form):
         stop_1 = str(progress - 0.001)
         stop_2 = str(progress)
         return styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
+
+    def updateBatteryInfo(self, list_info):
+        self.State_Result.setText(list_info[0])
+        self.Percentage_Result.setText(list_info[1])
+        self.Time_To.setText(list_info[2])
+        self.Time_Result.setText(list_info[3])

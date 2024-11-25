@@ -15,16 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDateTimeEdit, QGridLayout,
+    QHBoxLayout, QLabel, QMainWindow, QPushButton,
+    QSizePolicy, QSpacerItem, QStackedWidget, QVBoxLayout,
+    QWidget)
 import res_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1000, 500)
+        MainWindow.resize(1000, 508)
         MainWindow.setStyleSheet(u"background-color: rgb(245, 250, 254);")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -282,7 +283,7 @@ class Ui_MainWindow(object):
         icon6 = QIcon()
         icon6.addFile(u":/image/Resource/menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.Menu_Btn.setIcon(icon6)
-        self.Menu_Btn.setIconSize(QSize(30, 30))
+        self.Menu_Btn.setIconSize(QSize(35, 35))
         self.Menu_Btn.setCheckable(True)
 
         self.horizontalLayout_4.addWidget(self.Menu_Btn)
@@ -291,22 +292,32 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
 
+        self.label = QLabel(self.header_widget)
+        self.label.setObjectName(u"label")
+        self.label.setMinimumSize(QSize(35, 35))
+        self.label.setMaximumSize(QSize(35, 35))
+        self.label.setPixmap(QPixmap(u":/image/Resource/calendar.png"))
+        self.label.setScaledContents(True)
+        self.label.setWordWrap(False)
+
+        self.horizontalLayout_4.addWidget(self.label)
+
+        self.dateTimeEdit = QDateTimeEdit(self.header_widget)
+        self.dateTimeEdit.setObjectName(u"dateTimeEdit")
+        self.dateTimeEdit.setFont(font1)
+        self.dateTimeEdit.setStyleSheet(u"font-size: 16px;\n"
+"border-radius: 5px;\n"
+"padding: 5px;\n"
+"background-color: rgb(222, 221, 218);\n"
+"text-align: center;")
+        self.dateTimeEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.dateTimeEdit.setReadOnly(True)
+        self.dateTimeEdit.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.NoButtons)
+
+        self.horizontalLayout_4.addWidget(self.dateTimeEdit)
+
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.lineEdit = QLineEdit(self.header_widget)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.horizontalLayout.addWidget(self.lineEdit)
-
-        self.pushButton_14 = QPushButton(self.header_widget)
-        self.pushButton_14.setObjectName(u"pushButton_14")
-        icon7 = QIcon()
-        icon7.addFile(u"Resource/search.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.pushButton_14.setIcon(icon7)
-        self.pushButton_14.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout.addWidget(self.pushButton_14)
-
 
         self.horizontalLayout_4.addLayout(self.horizontalLayout)
 
@@ -317,10 +328,10 @@ class Ui_MainWindow(object):
         self.Info_Btn = QPushButton(self.header_widget)
         self.Info_Btn.setObjectName(u"Info_Btn")
         self.Info_Btn.setStyleSheet(u"border:none;")
-        icon8 = QIcon()
-        icon8.addFile(u":/image/Resource/user.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.Info_Btn.setIcon(icon8)
-        self.Info_Btn.setIconSize(QSize(30, 30))
+        icon7 = QIcon()
+        icon7.addFile(u":/image/Resource/user.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.Info_Btn.setIcon(icon7)
+        self.Info_Btn.setIconSize(QSize(35, 35))
         self.Info_Btn.setCheckable(False)
         self.Info_Btn.setAutoExclusive(False)
 
@@ -341,8 +352,6 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Menu_Btn.toggled.connect(self.icon_only_widget.setHidden)
-        self.Menu_Btn.toggled.connect(self.icon_name_widget.setVisible)
         self.General_Btn1.toggled.connect(self.General_Btn2.setChecked)
         self.Power_Saving_Btn1.toggled.connect(self.Power_Saving_Btn2.setChecked)
         self.Brightness_Btn1.toggled.connect(self.Brightness_Btn2.setChecked)
@@ -355,6 +364,8 @@ class Ui_MainWindow(object):
         self.Sign_Out_Btn2.toggled.connect(MainWindow.close)
         self.Battery_Level_Btn1.toggled.connect(self.Battery_Level_Btn2.setChecked)
         self.Battery_Level_Btn2.toggled.connect(self.Battery_Level_Btn1.setChecked)
+        self.Menu_Btn.toggled.connect(self.icon_only_widget.setHidden)
+        self.Menu_Btn.toggled.connect(self.icon_name_widget.setVisible)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -377,7 +388,8 @@ class Ui_MainWindow(object):
         self.General_Btn2.setText(QCoreApplication.translate("MainWindow", u"General", None))
         self.Sign_Out_Btn2.setText(QCoreApplication.translate("MainWindow", u"Sign Out", None))
         self.Menu_Btn.setText("")
-        self.pushButton_14.setText("")
+        self.label.setText("")
+        self.dateTimeEdit.setDisplayFormat(QCoreApplication.translate("MainWindow", u"M/d/yyyy - h:mm\u202fAP", None))
         self.Info_Btn.setText("")
     # retranslateUi
 

@@ -1,5 +1,5 @@
+from PySide6.QtCore import QTimer, QDateTime
 from PySide6.QtWidgets import QMainWindow
-from Controller import General
 from View.Main import Ui_MainWindow
 
 from Controller.Info import Info_Page
@@ -19,6 +19,7 @@ class Form(QMainWindow, Ui_MainWindow):
 
         self.setupSignal()
         self.setupPage()
+        self.setupDateTimeUpdater()  # Thêm chức năng cập nhật thời gian
 
     def setupPage(self):
         self.Info_Page = Info_Page()
@@ -56,6 +57,19 @@ class Form(QMainWindow, Ui_MainWindow):
         for button, page in Button_Page_Mapping.items():
             button.clicked.connect(lambda _, p=page: self.switchToPage(p))
 
-
     def switchToPage(self, Page_Number):
         self.Stacked_Widget.setCurrentIndex(Page_Number)
+
+    def setupDateTimeUpdater(self):
+        """Thiết lập bộ đếm thời gian để cập nhật thời gian cho QDateTimeEdit."""
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.updateDateTime)
+        self.timer.start(1000)  # Cập nhật mỗi 1 giây
+
+        # Khởi tạo giá trị ban đầu
+        self.updateDateTime()
+
+    def updateDateTime(self):
+        """Cập nhật thời gian hiện tại cho QDateTimeEdit."""
+        current_time = QDateTime.currentDateTime()
+        self.dateTimeEdit.setDateTime(current_time)

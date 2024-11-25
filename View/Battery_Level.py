@@ -23,14 +23,14 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(663, 428)
-        self.horizontalLayout_2 = QHBoxLayout(Form)
+        Form.resize(861, 431)
+        self.horizontalLayout_3 = QHBoxLayout(Form)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
 
         self.widget = QWidget(Form)
         self.widget.setObjectName(u"widget")
@@ -151,14 +151,112 @@ class Ui_Form(object):
         self.verticalLayout_6.addWidget(self.circle_lv)
 
 
-        self.horizontalLayout.addWidget(self.widget)
+        self.horizontalLayout_2.addWidget(self.widget)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer)
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.widget_5 = QWidget(Form)
+        self.widget_5.setObjectName(u"widget_5")
+        self.horizontalLayout = QHBoxLayout(self.widget_5)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.widget_2 = QWidget(self.widget_5)
+        self.widget_2.setObjectName(u"widget_2")
+        self.widget_2.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(203, 222, 221);\n"
+"	font: 600 12pt \"URW Gothic\";\n"
+"	padding:5px;\n"
+"    border-top-left-radius: 7px; /* Bo g\u00f3c tr\u00ean b\u00ean tr\u00e1i */\n"
+"    border-bottom-left-radius: 7px; /* Bo g\u00f3c d\u01b0\u1edbi b\u00ean tr\u00e1i */\n"
+"}")
+        self.verticalLayout_5 = QVBoxLayout(self.widget_2)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_5.addItem(self.verticalSpacer)
+
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setSpacing(30)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(-1, 0, -1, -1)
+        self.label = QLabel(self.widget_2)
+        self.label.setObjectName(u"label")
+
+        self.verticalLayout.addWidget(self.label)
+
+        self.label_4 = QLabel(self.widget_2)
+        self.label_4.setObjectName(u"label_4")
+
+        self.verticalLayout.addWidget(self.label_4)
+
+        self.Time_To = QLabel(self.widget_2)
+        self.Time_To.setObjectName(u"Time_To")
+
+        self.verticalLayout.addWidget(self.Time_To)
 
 
-        self.horizontalLayout_2.addLayout(self.horizontalLayout)
+        self.verticalLayout_5.addLayout(self.verticalLayout)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_5.addItem(self.verticalSpacer_2)
+
+
+        self.horizontalLayout.addWidget(self.widget_2)
+
+        self.widget_3 = QWidget(self.widget_5)
+        self.widget_3.setObjectName(u"widget_3")
+        self.widget_3.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(192, 191, 188);\n"
+"	font: 600 12pt \"URW Gothic\";\n"
+"	padding:5px;\n"
+"    border-top-right-radius: 7px; /* Bo g\u00f3c tr\u00ean b\u00ean tr\u00e1i */\n"
+"    border-bottom-right-radius: 7px; /* Bo g\u00f3c d\u01b0\u1edbi b\u00ean tr\u00e1i */\n"
+"}")
+        self.verticalLayout_11 = QVBoxLayout(self.widget_3)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_11.addItem(self.verticalSpacer_3)
+
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setSpacing(30)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.State_Result = QLabel(self.widget_3)
+        self.State_Result.setObjectName(u"State_Result")
+
+        self.verticalLayout_2.addWidget(self.State_Result)
+
+        self.Percentage_Result = QLabel(self.widget_3)
+        self.Percentage_Result.setObjectName(u"Percentage_Result")
+
+        self.verticalLayout_2.addWidget(self.Percentage_Result)
+
+        self.Time_Result = QLabel(self.widget_3)
+        self.Time_Result.setObjectName(u"Time_Result")
+
+        self.verticalLayout_2.addWidget(self.Time_Result)
+
+
+        self.verticalLayout_11.addLayout(self.verticalLayout_2)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_11.addItem(self.verticalSpacer_4)
+
+
+        self.horizontalLayout.addWidget(self.widget_3)
+
+
+        self.horizontalLayout_2.addWidget(self.widget_5)
+
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_3)
+
+
+        self.horizontalLayout_3.addLayout(self.horizontalLayout_2)
 
 
         self.retranslateUi(Form)
@@ -172,5 +270,11 @@ class Ui_Form(object):
         self.version.setText(QCoreApplication.translate("Form", u"v1.0.0 - Beta 1", None))
         self.loading.setText(QCoreApplication.translate("Form", u"Loading ...", None))
         self.Percent.setText(QCoreApplication.translate("Form", u"<html><head/><body><p><span style=\" font-size:36pt;\">0</span><span style=\" font-size:24pt; vertical-align:super;\">%</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("Form", u"State:", None))
+        self.label_4.setText(QCoreApplication.translate("Form", u"Percentage:", None))
+        self.Time_To.setText(QCoreApplication.translate("Form", u"Time to empty/full:", None))
+        self.State_Result.setText(QCoreApplication.translate("Form", u"Result", None))
+        self.Percentage_Result.setText(QCoreApplication.translate("Form", u"Result", None))
+        self.Time_Result.setText(QCoreApplication.translate("Form", u"Result", None))
     # retranslateUi
 

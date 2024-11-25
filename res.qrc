@@ -9,5 +9,6 @@
         <file>Resource/exit.png</file>
         <file>Resource/menu.png</file>
         <file>Resource/user.png</file>
+        <file>Resource/calendar.png</file>
     </qresource>
 </RCC>

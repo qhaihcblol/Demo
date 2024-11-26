@@ -10,5 +10,8 @@
         <file>Resource/menu.png</file>
         <file>Resource/user.png</file>
         <file>Resource/calendar.png</file>
+        <file>Resource/powersaver.png</file>
+        <file>Resource/performance.png</file>
+        <file>Resource/balance.png</file>
     </qresource>
 </RCC>

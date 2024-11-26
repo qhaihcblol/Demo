@@ -41,12 +41,13 @@ class Battery_Level_Page(QWidget, Ui_Form):
         self.timer.timeout.connect(self.updateBattery)
         self.animation.valueChanged.connect(self.updateBattery)
         self.batteryinfo_worker.batteryinfo_signal.connect(self.updateBatteryInfo)
+        self.animation.finished.connect(self.setLoading)
 
     def showEvent(self, event):
         if not self.batteryinfo_worker.isRunning():
             self.batteryinfo_worker.start()
         self.animationLoad(self.getBatteryPercentage())
-
+        self.loading.setText("Loading...")
         self.timer.start(1000)
         super().showEvent(event)
 
@@ -67,6 +68,9 @@ class Battery_Level_Page(QWidget, Ui_Form):
         self.animation.setEndValue(value)
         self.animation.setDuration(1000)
         self.animation.start()
+
+    def setLoading(self):
+        self.loading.setText("Loaded")
 
     def updateBattery(self, value=None):
         if value is None:

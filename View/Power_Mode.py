@@ -15,40 +15,45 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGroupBox, QRadioButton, QSizePolicy,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QLabel, QPushButton, QSizePolicy,
+    QWidget)
+import res_rc
 
 class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(576, 380)
-        self.Power_Mode_Option = QGroupBox(Form)
-        self.Power_Mode_Option.setObjectName(u"Power_Mode_Option")
-        self.Power_Mode_Option.setGeometry(QRect(110, 60, 341, 221))
-        self.Power_Mode_Option.setStyleSheet(u"QRadioButton{\n"
-"	background-color: rgb(153, 193, 241);\n"
-"	border-radius:5px;\n"
-"	padding:15px;\n"
-"}\n"
-"")
-        self.verticalLayout = QVBoxLayout(self.Power_Mode_Option)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.Performance_RBtn = QRadioButton(self.Power_Mode_Option)
-        self.Performance_RBtn.setObjectName(u"Performance_RBtn")
-
-        self.verticalLayout.addWidget(self.Performance_RBtn)
-
-        self.Balanced_RBtn = QRadioButton(self.Power_Mode_Option)
-        self.Balanced_RBtn.setObjectName(u"Balanced_RBtn")
-
-        self.verticalLayout.addWidget(self.Balanced_RBtn)
-
-        self.PowerSaver_RBtn = QRadioButton(self.Power_Mode_Option)
-        self.PowerSaver_RBtn.setObjectName(u"PowerSaver_RBtn")
-
-        self.verticalLayout.addWidget(self.PowerSaver_RBtn)
-
+        Form.resize(678, 431)
+        self.label_4 = QLabel(Form)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(120, 280, 40, 40))
+        self.label_4.setMinimumSize(QSize(40, 40))
+        self.label_4.setMaximumSize(QSize(40, 40))
+        self.label_4.setPixmap(QPixmap(u":/image/Resource/powersaver.png"))
+        self.label_4.setScaledContents(True)
+        self.label_5 = QLabel(Form)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(120, 190, 40, 40))
+        self.label_5.setMinimumSize(QSize(40, 40))
+        self.label_5.setMaximumSize(QSize(40, 40))
+        self.label_5.setPixmap(QPixmap(u":/image/Resource/balance.png"))
+        self.label_5.setScaledContents(True)
+        self.label_6 = QLabel(Form)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(120, 90, 40, 40))
+        self.label_6.setMinimumSize(QSize(40, 40))
+        self.label_6.setMaximumSize(QSize(40, 40))
+        self.label_6.setPixmap(QPixmap(u":/image/Resource/performance.png"))
+        self.label_6.setScaledContents(True)
+        self.Performance_Btn = QPushButton(Form)
+        self.Performance_Btn.setObjectName(u"Performance_Btn")
+        self.Performance_Btn.setGeometry(QRect(210, 90, 181, 41))
+        self.Balanced_Btn = QPushButton(Form)
+        self.Balanced_Btn.setObjectName(u"Balanced_Btn")
+        self.Balanced_Btn.setGeometry(QRect(210, 190, 181, 41))
+        self.Power_Saver_Btn = QPushButton(Form)
+        self.Power_Saver_Btn.setObjectName(u"Power_Saver_Btn")
+        self.Power_Saver_Btn.setGeometry(QRect(210, 280, 181, 41))
 
         self.retranslateUi(Form)
 
@@ -57,9 +62,11 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.Power_Mode_Option.setTitle(QCoreApplication.translate("Form", u"Power Mode", None))
-        self.Performance_RBtn.setText(QCoreApplication.translate("Form", u"Performance", None))
-        self.Balanced_RBtn.setText(QCoreApplication.translate("Form", u"Balanced", None))
-        self.PowerSaver_RBtn.setText(QCoreApplication.translate("Form", u"Power Saver", None))
+        self.label_4.setText("")
+        self.label_5.setText("")
+        self.label_6.setText("")
+        self.Performance_Btn.setText(QCoreApplication.translate("Form", u"Performance", None))
+        self.Balanced_Btn.setText(QCoreApplication.translate("Form", u"Balanced", None))
+        self.Power_Saver_Btn.setText(QCoreApplication.translate("Form", u"Power Saver", None))
     # retranslateUi
 

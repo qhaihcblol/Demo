@@ -52,14 +52,8 @@ class Power_Mode_Page(QWidget, Ui_Form):
     def getStyleSheet(self):
         stylesheet = """
         QPushButton {
-            font-size: 20px;
-            font-weight: normal;
-            color: #333;
             background-color: #e6e6e6;
-            border: 2px solid #aaa;
-            border-radius: 8px;
-            padding: 8px 16px;
-            margin: 5px 0;
+            padding:10px;
         }
         QPushButton:hover {
             background-color: #d9d9d9;
@@ -69,15 +63,9 @@ class Power_Mode_Page(QWidget, Ui_Form):
 
     def getNewStyleSheet(self):
         stylesheet = """
-        QPushButton {
-            font-size: 20px;
-            font-weight: normal;
-            color: #333;
+        QPushButton { 
             background-color: rgb(46, 194, 126);
-            border: 2px solid #aaa;
-            border-radius: 8px;
-            padding: 8px 16px;
-            margin: 5px 0;
+            padding:10px;
         }
         QPushButton:hover {
             background-color: rgb(40, 180, 116);

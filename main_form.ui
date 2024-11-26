@@ -47,6 +47,10 @@ QPushButton:checked{
 	background-color:#f5fafe;
 	color:#1f95ef;
 	font-weight:bold;
+}
+QPushButton:hover {
+    background-color: #dbefff; /* Màu nền nhạt hơn khi hover */
+    color: #1f78d1;           /* Màu chữ phù hợp với nền mới */
 }</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -246,24 +250,32 @@ QPushButton:checked{
     <item row="0" column="1">
      <widget class="QWidget" name="icon_name_widget" native="true">
       <property name="styleSheet">
-       <string notr="true">QWidget{
-	background-color: rgb(53, 132, 228);
-	color:white;
+       <string notr="true">QWidget {
+    background-color: rgb(53, 132, 228);
+    color: white;
 }
-QPushButton{
-	color:white;
-	text-align:left;
-	border:none;
-	padding:5px 0px 5px 10px;
-	border-top-left-radius:10px;
-	border-bottom-left-radius:10px;
-	font:14px;
+
+QPushButton {
+    color: white;
+    text-align: left;
+    border: none;
+    padding: 5px 0px 5px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font: 14px;
 }
-QPushButton:checked{
-	background-color:#f5fafe;
-	color:#1f95ef;
-	font-weight:bold;
-}</string>
+
+QPushButton:hover {
+    background-color: #dbefff; /* Màu nền nhạt hơn khi hover */
+    color: #1f78d1;           /* Màu chữ phù hợp với nền mới */
+}
+
+QPushButton:checked {
+    background-color: #f5fafe;
+    color: #1f95ef;
+    font-weight: bold;
+}
+</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="rightMargin">

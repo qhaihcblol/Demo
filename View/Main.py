@@ -48,6 +48,10 @@ class Ui_MainWindow(object):
 "	background-color:#f5fafe;\n"
 "	color:#1f95ef;\n"
 "	font-weight:bold;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #dbefff; /* M\u00e0u n\u1ec1n nh\u1ea1t h\u01a1n khi hover */\n"
+"    color: #1f78d1;           /* M\u00e0u ch\u1eef ph\u00f9 h\u1ee3p v\u1edbi n\u1ec1n m\u1edbi */\n"
 "}")
         self.verticalLayout_3 = QVBoxLayout(self.icon_only_widget)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -147,24 +151,32 @@ class Ui_MainWindow(object):
 
         self.icon_name_widget = QWidget(self.centralwidget)
         self.icon_name_widget.setObjectName(u"icon_name_widget")
-        self.icon_name_widget.setStyleSheet(u"QWidget{\n"
-"	background-color: rgb(53, 132, 228);\n"
-"	color:white;\n"
+        self.icon_name_widget.setStyleSheet(u"QWidget {\n"
+"    background-color: rgb(53, 132, 228);\n"
+"    color: white;\n"
 "}\n"
-"QPushButton{\n"
-"	color:white;\n"
-"	text-align:left;\n"
-"	border:none;\n"
-"	padding:5px 0px 5px 10px;\n"
-"	border-top-left-radius:10px;\n"
-"	border-bottom-left-radius:10px;\n"
-"	font:14px;\n"
+"\n"
+"QPushButton {\n"
+"    color: white;\n"
+"    text-align: left;\n"
+"    border: none;\n"
+"    padding: 5px 0px 5px 10px;\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    font: 14px;\n"
 "}\n"
-"QPushButton:checked{\n"
-"	background-color:#f5fafe;\n"
-"	color:#1f95ef;\n"
-"	font-weight:bold;\n"
-"}")
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #dbefff; /* M\u00e0u n\u1ec1n nh\u1ea1t h\u01a1n khi hover */\n"
+"    color: #1f78d1;           /* M\u00e0u ch\u1eef ph\u00f9 h\u1ee3p v\u1edbi n\u1ec1n m\u1edbi */\n"
+"}\n"
+"\n"
+"QPushButton:checked {\n"
+"    background-color: #f5fafe;\n"
+"    color: #1f95ef;\n"
+"    font-weight: bold;\n"
+"}\n"
+"")
         self.verticalLayout_4 = QVBoxLayout(self.icon_name_widget)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(-1, -1, 0, -1)

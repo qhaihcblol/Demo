@@ -76,10 +76,11 @@ class General_Page(QWidget, Ui_Form):
                 self.Show_Battery_Percentage_CB.isChecked()
             )
         )
-        self.Suspend_Btn.clicked.connect(lambda :self.choosePowerOption("suspend"))
-        self.Restart_Btn.clicked.connect(lambda :self.choosePowerOption("restart"))
-        self.Power_Off_Btn.clicked.connect(lambda :self.choosePowerOption("poweroff"))
-        self.Log_Out_Btn.clicked.connect(lambda :self.choosePowerOption("logout"))
+        self.Suspend_Btn.clicked.connect(lambda: self.choosePowerOption("suspend"))
+        self.Restart_Btn.clicked.connect(lambda: self.choosePowerOption("restart"))
+        self.Power_Off_Btn.clicked.connect(lambda: self.choosePowerOption("poweroff"))
+        self.Log_Out_Btn.clicked.connect(lambda: self.choosePowerOption("logout"))
+
     def showEvent(self, event):
         if not self.powerbuttonbehavior_worker.isRunning():
             self.powerbuttonbehavior_worker.start()
@@ -137,6 +138,7 @@ class General_Page(QWidget, Ui_Form):
 
     def updateShowBatteryPercentage(self, status):
         self.Show_Battery_Percentage_CB.setChecked(status == "true")
+
     def setShowBatteryPercentage(self, status):
         try:
             script_path = os.path.join(
@@ -145,11 +147,14 @@ class General_Page(QWidget, Ui_Form):
                 "Show_Battery_Percentage",
                 "Set_Show_Battery_Percentage.sh",
             )
-            subprocess.run(["bash", script_path, str(status).lower()],check=True,text=True)
+            subprocess.run(
+                ["bash", script_path, str(status).lower()], check=True, text=True
+            )
         except subprocess.CalledProcessError as e:
             print(f"Error: Unable to show battery percentage: {e}")
         except Exception as e:
             print(f"Error: {e}")
+
     def choosePowerOption(self, option):
         try:
             script_path = os.path.join(
@@ -158,7 +163,9 @@ class General_Page(QWidget, Ui_Form):
                 "Power_Options",
                 "Choose_Power_Option.sh",
             )
-            subprocess.run(["bash", script_path, option])
+            subprocess.run(
+                ["bash", script_path, option], check=True, text=True
+            )
         except subprocess.CalledProcessError as e:
             print(f"Error: Unable to choose power option: {e}")
         except Exception as e:

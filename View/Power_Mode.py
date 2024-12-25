@@ -16,8 +16,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QPushButton,
-    QSizePolicy, QSpacerItem, QTextEdit, QVBoxLayout,
-    QWidget)
+    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 import res_rc
 
 class Ui_Form(object):
@@ -28,13 +27,21 @@ class Ui_Form(object):
         self.widget_4 = QWidget(Form)
         self.widget_4.setObjectName(u"widget_4")
         self.widget_4.setGeometry(QRect(60, 40, 291, 331))
-        self.widget_4.setStyleSheet(u"        QPushButton {\n"
-"            background-color: #e6e6e6;\n"
-"            padding:10px;\n"
-"        }\n"
-"        QPushButton:hover {\n"
-"            background-color: #d9d9d9;\n"
-"        }")
+        self.widget_4.setStyleSheet(u"QPushButton {\n"
+"    background-color: #e6e6e6;\n"
+"    color: #333; /* M\u00e0u ch\u1eef */\n"
+"    padding: 10px 15px;\n"
+"    border: 2px solid #cccccc; /* Vi\u1ec1n */\n"
+"    border-radius: 10px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"    text-align: center;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #d9d9d9; /* M\u00e0u n\u1ec1n khi hover */\n"
+"    border-color: #bbbbbb; /* Vi\u1ec1n khi hover */\n"
+"}")
         self.verticalLayout = QVBoxLayout(self.widget_4)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(self.widget_4)
@@ -53,6 +60,7 @@ class Ui_Form(object):
 
         self.widget = QWidget(self.widget_4)
         self.widget.setObjectName(u"widget")
+        self.widget.setStyleSheet(u"")
         self.horizontalLayout = QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.label_6 = QLabel(self.widget)
@@ -67,7 +75,7 @@ class Ui_Form(object):
         self.Performance_Btn = QPushButton(self.widget)
         self.Performance_Btn.setObjectName(u"Performance_Btn")
         font1 = QFont()
-        font1.setBold(False)
+        font1.setBold(True)
         font1.setItalic(False)
         self.Performance_Btn.setFont(font1)
 
@@ -126,27 +134,41 @@ class Ui_Form(object):
 
         self.verticalLayout.addWidget(self.widget_3)
 
-        self.widget_5 = QWidget(Form)
-        self.widget_5.setObjectName(u"widget_5")
-        self.widget_5.setGeometry(QRect(370, 40, 231, 321))
-        self.verticalLayout_2 = QVBoxLayout(self.widget_5)
+        self.widget1 = QWidget(Form)
+        self.widget1.setObjectName(u"widget1")
+        self.widget1.setGeometry(QRect(380, 40, 196, 311))
+        self.verticalLayout_2 = QVBoxLayout(self.widget1)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.label_2 = QLabel(self.widget_5)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.widget1)
         self.label_2.setObjectName(u"label_2")
-        font2 = QFont()
-        font2.setFamilies([u"URW Gothic"])
-        font2.setPointSize(15)
-        font2.setBold(True)
-        self.label_2.setFont(font2)
+        self.label_2.setFont(font)
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_2.addWidget(self.label_2)
 
-        self.textEdit = QTextEdit(self.widget_5)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setStyleSheet(u"font: 600 16pt \"URW Gothic\";")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.info = QLabel(self.widget1)
+        self.info.setObjectName(u"info")
+        self.info.setMinimumSize(QSize(120, 200))
+        self.info.setMaximumSize(QSize(120, 200))
+        font2 = QFont()
+        font2.setFamilies([u"URW Gothic"])
+        font2.setPointSize(13)
+        font2.setBold(False)
+        self.info.setFont(font2)
+        self.info.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
+        self.info.setWordWrap(True)
 
-        self.verticalLayout_2.addWidget(self.textEdit)
+        self.horizontalLayout_4.addWidget(self.info)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_4)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_2.addItem(self.verticalSpacer_3)
 
 
         self.retranslateUi(Form)
@@ -163,14 +185,7 @@ class Ui_Form(object):
         self.Balanced_Btn.setText(QCoreApplication.translate("Form", u"Balanced", None))
         self.label_4.setText("")
         self.Power_Saver_Btn.setText(QCoreApplication.translate("Form", u"Power Saver", None))
-        self.label_2.setText(QCoreApplication.translate("Form", u"Info", None))
-        self.textEdit.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'URW Gothic'; font-size:16pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Ubuntu Sans'; font-size:11pt; font-weight:400;\">infomation of button</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"Mode Information", None))
+        self.info.setText(QCoreApplication.translate("Form", u"Info", None))
     # retranslateUi
 

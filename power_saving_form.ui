@@ -16,8 +16,8 @@
   <widget class="QCheckBox" name="Dim_Screen_CB">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>10</y>
+     <x>50</x>
+     <y>110</y>
      <width>111</width>
      <height>24</height>
     </rect>
@@ -29,9 +29,9 @@
   <widget class="QCheckBox" name="Auto_PS_Btn">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>100</y>
-     <width>291</width>
+     <x>60</x>
+     <y>200</y>
+     <width>181</width>
      <height>24</height>
     </rect>
    </property>
@@ -42,8 +42,8 @@
   <widget class="QComboBox" name="Screen_Blank_CbB">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>60</y>
+     <x>170</x>
+     <y>160</y>
      <width>101</width>
      <height>26</height>
     </rect>
@@ -102,8 +102,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>60</y>
+     <x>50</x>
+     <y>160</y>
      <width>91</width>
      <height>18</height>
     </rect>
@@ -115,8 +115,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>160</y>
+     <x>290</x>
+     <y>60</y>
      <width>171</width>
      <height>18</height>
     </rect>
@@ -128,8 +128,8 @@
   <widget class="QCheckBox" name="On_Battery_Power_CB">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>200</y>
+     <x>330</x>
+     <y>100</y>
      <width>151</width>
      <height>24</height>
     </rect>
@@ -141,8 +141,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>240</y>
+     <x>330</x>
+     <y>140</y>
      <width>66</width>
      <height>18</height>
     </rect>
@@ -154,8 +154,8 @@
   <widget class="QComboBox" name="Delay1_CbB">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>240</y>
+     <x>420</x>
+     <y>140</y>
      <width>101</width>
      <height>26</height>
     </rect>
@@ -214,8 +214,8 @@
   <widget class="QCheckBox" name="Plugged_In_CB">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>280</y>
+     <x>330</x>
+     <y>180</y>
      <width>141</width>
      <height>24</height>
     </rect>
@@ -227,8 +227,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>320</y>
+     <x>330</x>
+     <y>220</y>
      <width>66</width>
      <height>18</height>
     </rect>
@@ -240,8 +240,8 @@
   <widget class="QComboBox" name="Delay2_CbB">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>320</y>
+     <x>420</x>
+     <y>220</y>
      <width>101</width>
      <height>26</height>
     </rect>

@@ -26,7 +26,7 @@ class Ui_Form(object):
         Form.resize(576, 380)
         self.layoutWidget = QWidget(Form)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(130, 160, 321, 62))
+        self.layoutWidget.setGeometry(QRect(130, 160, 371, 62))
         self.horizontalLayout = QHBoxLayout(self.layoutWidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -38,6 +38,11 @@ class Ui_Form(object):
         self.label.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label)
+
+        self.label_3 = QLabel(self.layoutWidget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout.addWidget(self.label_3)
 
         self.Brightness_Slider = QSlider(self.layoutWidget)
         self.Brightness_Slider.setObjectName(u"Brightness_Slider")
@@ -53,6 +58,17 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.Brightness_Slider)
 
+        self.label_4 = QLabel(self.layoutWidget)
+        self.label_4.setObjectName(u"label_4")
+
+        self.horizontalLayout.addWidget(self.label_4)
+
+        self.label_2 = QLabel(Form)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(210, 240, 241, 18))
+        self.label_5 = QLabel(Form)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(330, 120, 121, 18))
 
         self.retranslateUi(Form)
 
@@ -62,5 +78,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText("")
+        self.label_3.setText(QCoreApplication.translate("Form", u"0%", None))
+        self.label_4.setText(QCoreApplication.translate("Form", u"100%", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"Drag and drop to adjust brightness", None))
+        self.label_5.setText(QCoreApplication.translate("Form", u"Brightness", None))
     # retranslateUi
 

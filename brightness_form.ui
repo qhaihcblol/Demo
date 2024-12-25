@@ -18,7 +18,7 @@
     <rect>
      <x>130</x>
      <y>160</y>
-     <width>321</width>
+     <width>371</width>
      <height>62</height>
     </rect>
    </property>
@@ -49,6 +49,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>0%</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QSlider" name="Brightness_Slider">
       <property name="styleSheet">
        <string notr="true">QSlider{
@@ -71,7 +78,40 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>100%</string>
+      </property>
+     </widget>
+    </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>240</y>
+     <width>241</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Drag and drop to adjust brightness</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>120</y>
+     <width>121</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Brightness</string>
+   </property>
   </widget>
  </widget>
  <resources>

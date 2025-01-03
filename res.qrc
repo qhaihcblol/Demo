@@ -13,5 +13,8 @@
         <file>Resource/powersaver.png</file>
         <file>Resource/performance.png</file>
         <file>Resource/balance.png</file>
+        <file>Resource/down-arrow.svg</file>
+        <file>Resource/QuocHieu.jpeg</file>
+        <file>Resource/QuangHai.jpg</file>
     </qresource>
 </RCC>

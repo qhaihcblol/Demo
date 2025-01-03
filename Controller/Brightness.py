@@ -35,6 +35,10 @@ class Brightness_Page(QWidget, Ui_Form):
     def setupSignal(self):
         self.brightness_worker.brightness_signal.connect(self.updateSlider)
         self.Brightness_Slider.valueChanged.connect(self.setBrightness)
+        self._25_Btn.clicked.connect(lambda: self.setBrightnessByButton(25))
+        self._50_Btn.clicked.connect(lambda: self.setBrightnessByButton(50))
+        self._75_Btn.clicked.connect(lambda: self.setBrightnessByButton(75))
+        self._100_Btn.clicked.connect(lambda: self.setBrightnessByButton(100))
 
     def showEvent(self, event):
         # Chỉ chạy Worker khi trang hiển thị
@@ -53,6 +57,7 @@ class Brightness_Page(QWidget, Ui_Form):
             self.Brightness_Slider.setValue(value)
 
     def setBrightness(self, value):
+        self.percent.setText(f"Brightness: {self.calculatePercent(value):.2f}%")
         try:
             script_path = os.path.join("Model", "Brightness", "Set_Brightness.sh")
             subprocess.run(["bash", script_path, str(value)], check=True, text=True)
@@ -61,6 +66,9 @@ class Brightness_Page(QWidget, Ui_Form):
         except Exception as e:
             print(f"Unexpected error: {e}")
 
-    # def getPercentage(self, value):
-    #     max_brightness = 937
-    #     return round((value / max_brightness) * 100)
+    def calculatePercent(self, value):
+        return (value - 9) / (937 - 9) * 100
+
+    def setBrightnessByButton(self, percentage):
+        value = 9 + (percentage / 100) * (937 - 9)
+        self.setBrightness(value)

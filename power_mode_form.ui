@@ -6,24 +6,51 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>678</width>
+    <width>645</width>
     <height>431</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="widget_4" native="true">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>40</y>
-     <width>291</width>
-     <height>331</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
+  <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>80</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_5" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>450</width>
+       <height>350</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>450</width>
+       <height>350</height>
+      </size>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>15</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="widget_4" native="true">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
     background-color: #e6e6e6;
     color: #333; /* Màu chữ */
     padding: 10px 15px;
@@ -38,261 +65,225 @@ QPushButton:hover {
     background-color: #d9d9d9; /* Màu nền khi hover */
     border-color: #bbbbbb; /* Viền khi hover */
 }</string>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>URW Gothic</family>
-        <pointsize>15</pointsize>
-        <bold>true</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>Power Mode</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QWidget" name="widget" native="true">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="res.qrc">:/image/Resource/performance.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Performance_Btn">
-         <property name="font">
-          <font>
-           <pointsize>-1</pointsize>
-           <italic>false</italic>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Performance</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QWidget" name="widget_2" native="true">
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLabel" name="label_5">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="res.qrc">:/image/Resource/balance.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Balanced_Btn">
-         <property name="text">
-          <string>Balanced</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QWidget" name="widget_3" native="true">
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="res.qrc">:/image/Resource/powersaver.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Power_Saver_Btn">
-         <property name="text">
-          <string>Power Saver</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>40</y>
-     <width>196</width>
-     <height>311</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <family>URW Gothic</family>
-        <pointsize>15</pointsize>
-        <bold>true</bold>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>Mode Information</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="info">
-        <property name="minimumSize">
-         <size>
-          <width>120</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>120</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>URW Gothic</family>
-          <pointsize>13</pointsize>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Info</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget" native="true">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="res.qrc">:/image/Resource/performance.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Performance_Btn">
+                <property name="font">
+                 <font>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-style:italic; color:#5e5c64;&quot;&gt;High &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:400; font-style:italic; color:#5e5c64;&quot;&gt;performance and power usage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>Performance</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_2" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="res.qrc">:/image/Resource/balance.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Balanced_Btn">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-style:italic; color:#5e5c64;&quot;&gt;Standard &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:400; font-style:italic; color:#5e5c64;&quot;&gt;performance and power usage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>Balanced</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_3" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="res.qrc">:/image/Resource/powersaver.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Power_Saver_Btn">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-style:italic; color:#5e5c64;&quot;&gt;Reduced &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:400; font-style:italic; color:#5e5c64;&quot;&gt;performance and power usage&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>Power Saver</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="info">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>-1</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #f2f2f2;    /* Màu nền sáng nhẹ */
+    color: #333333;               /* Màu chữ xám đậm */
+    border: 1px solid #cccccc;    /* Đường viền màu xám nhạt */
+    border-radius: 8px;           /* Bo tròn góc */
+    font-family: &quot;Arial&quot;, sans-serif; /* Font chữ hiện đại */
+    font-size: 20px;              /* Kích thước chữ vừa phải */
+    font-weight: bold;            /* Chữ in đậm */
+    padding: 5px;                 /* Khoảng cách nội dung bên trong */
+    text-align: center;           /* Canh giữa nội dung */
+}</string>
+          </property>
+          <property name="text">
+           <string>Infomation</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-   </layout>
-  </widget>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>79</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
  </widget>
  <resources>
   <include location="res.qrc"/>

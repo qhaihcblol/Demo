@@ -91,6 +91,7 @@ class Power_Mode_Page(QWidget, Ui_Form):
                 self.Performance_Btn.setStyleSheet(self.getStyleSheet())
                 self.Balanced_Btn.setStyleSheet(self.getStyleSheet())
                 self.info.setText(self.getInfomation(mode))
+
     def setPowerMode(self, mode):
         if not self.updating:
             self.updating = True
@@ -103,10 +104,11 @@ class Power_Mode_Page(QWidget, Ui_Form):
                 print(f"Unexpected error: {e}")
             finally:
                 self.updating = False
-    def getInfomation(self,mode):
+
+    def getInfomation(self, mode):
         if mode == "performance":
-            return "High performance and power usage"
+            return "- High performance and power usage -"
         elif mode == "balanced":
-            return "Standard performance and power usage"
+            return "- Standard performance and power usage -"
         elif mode == "power-saver":
-            return "Reduced performance and power usage"
+            return "- Reduced performance and power usage -"

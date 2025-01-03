@@ -165,7 +165,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
         self.pluggedin_worker = PluggedInWorker()
         self.delayonbatterypower_worker = DelayOnBatteryPowerWorker()
         self.delaypluggedin_worker = DelayPluggedInWorker()
-        
+
         self.updating_screenblank = False
         self.updating_delayonbatterypower = False
         self.updating_delaypluggedin = False
@@ -183,8 +183,8 @@ class Power_Saving_Page(QWidget, Ui_Form):
         self.automaticpowersaver_worker.automaticpowersaver_signal.connect(
             self.updateAutomaticPowerSaver
         )
-        self.Auto_PS_Btn.clicked.connect(
-            lambda: self.setAutomaticPowerSaver(self.Auto_PS_Btn.isChecked())
+        self.Auto_PS_CB.clicked.connect(
+            lambda: self.setAutomaticPowerSaver(self.Auto_PS_CB.isChecked())
         )
         self.onbatterypower_worker.onbatterypower_signal.connect(
             self.updateOnBatteryPower
@@ -304,7 +304,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
                 self.updating_screenblank = False
 
     def updateAutomaticPowerSaver(self, state):
-        self.Auto_PS_Btn.setChecked(state == "true")
+        self.Auto_PS_CB.setChecked(state == "true")
 
     def setAutomaticPowerSaver(self, state):
         script_path = os.path.join(
@@ -322,6 +322,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
 
     def updateOnBatteryPower(self, state):
         self.On_Battery_Power_CB.setChecked(state == "'suspend'")
+        self.Delay1_CbB.setEnabled(state == "'suspend'")
 
     def setOnBatteryPower(self, state):
         script_path = os.path.join(
@@ -339,6 +340,7 @@ class Power_Saving_Page(QWidget, Ui_Form):
 
     def updatePluggedIn(self, state):
         self.Plugged_In_CB.setChecked(state == "'suspend'")
+        self.Delay2_CbB.setEnabled(state == "'suspend'")
 
     def setPluggedIn(self, state):
         script_path = os.path.join(
